@@ -29,9 +29,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container-wide flex items-center justify-between">
           <Link href="/">
-            <a className="text-3xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black group-hover:bg-[#00E676] transition-colors duration-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+            <a className="text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
+              <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-[#00E676] transition-colors duration-300">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
@@ -41,19 +41,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav */}
           <div className="hidden lg:block">
-            <nav className="flex items-center gap-10">
-              <NavLink href="/features">Features <ChevronDown className="w-4 h-4 inline ml-1 opacity-50" /></NavLink>
+            <nav className="flex items-center gap-8">
+              <NavLink href="/features">Features <ChevronDown className="w-3.5 h-3.5 inline ml-1 opacity-50" /></NavLink>
               <NavLink href="/who-we-serve">Who We Serve</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/about">About Us</NavLink>
-              <NavLink href="/hub">Simple Hub <ChevronDown className="w-4 h-4 inline ml-1 opacity-50" /></NavLink>
+              <NavLink href="/hub">Simple Hub <ChevronDown className="w-3.5 h-3.5 inline ml-1 opacity-50" /></NavLink>
             </nav>
           </div>
 
           {/* Actions */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
             <Link href="/login">
-              <Button variant="outline" className="h-11 px-6 rounded-xl text-white border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 font-bold text-xs uppercase tracking-widest">
+              <Button variant="outline" className="h-10 px-6 font-bold text-[10px] uppercase tracking-widest">
                 Dashboard Login
               </Button>
             </Link>
@@ -154,7 +154,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 function NavLink({ href, children }: any) {
   return (
     <Link href={href}>
-      <a className="font-bold text-[13px] uppercase tracking-widest text-white/80 hover:text-white transition-colors">
+      <a className="font-bold text-[12px] uppercase tracking-widest text-white/80 hover:text-white transition-colors">
         {children}
       </a>
     </Link>

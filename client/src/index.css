@@ -56,18 +56,24 @@
   --input: 214 32% 91%;
   --ring: 280 85% 63%;
 
-  --radius: 0.5rem;
+  --radius: 2rem;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+  html {
+    font-size: 15px; /* Slightly smaller base font for more professional look */
+  }
   body {
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary/20 overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-extrabold tracking-tight;
+  }
+  button, .btn {
+    @apply rounded-full transition-all duration-300;
   }
 }
 
@@ -77,26 +83,34 @@
   }
   
   .bg-gradient-primary {
-    @apply bg-gradient-to-r from-[#bb4ff1] to-[#9d3ee1] hover:brightness-110 transition-all duration-300;
+    @apply bg-gradient-to-r from-[#bb4ff1] to-[#9d3ee1] hover:brightness-105 transition-all duration-300;
   }
 
   .bg-gradient-green {
-    @apply bg-gradient-to-r from-[#00E676] to-[#00C853] hover:brightness-110 transition-all duration-300;
+    @apply bg-gradient-to-r from-[#00E676] to-[#00C853] hover:brightness-105 transition-all duration-300;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-[#9d3ee1] text-white hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
+  }
+
+  .btn-gradient-green {
+    @apply bg-gradient-to-r from-[#00E676] to-[#00C853] text-black hover:shadow-lg hover:shadow-[#00E676]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
   }
   
   .glass-header {
-    @apply bg-black/90 backdrop-blur-md border-none py-3 shadow-lg;
+    @apply bg-black/80 backdrop-blur-xl border-none py-2 shadow-xl;
   }
 
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-20 md:py-28;
   }
 
   .container-wide {
-    @apply max-w-7xl mx-auto px-6 md:px-10;
+    @apply max-w-6xl mx-auto px-6 md:px-8;
   }
 
   .zbooni-shadow {
-    box-shadow: 0 20px 80px -20px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px -12px rgba(0,0,0,0.15);
   }
 }

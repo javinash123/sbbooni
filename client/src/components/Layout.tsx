@@ -107,7 +107,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   SimpleBit
                 </a>
               </Link>
-              <p className="text-gray-400 text-lg leading-relaxed max-w-sm font-medium">
+              <p className="text-white/60 text-lg leading-relaxed max-w-sm font-medium">
                 The next generation platform for personalised commerce. SimpleBit provides everything you need to sell.
               </p>
               <div className="flex gap-4">
@@ -139,7 +139,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ]} />
           </div>
 
-          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
+          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
             <p>&copy; {new Date().getFullYear()} SimpleBit. All rights reserved. | <Link href="/privacy">Privacy Policy</Link> | <Link href="/terms">Terms of Service</Link></p>
             <div className="flex gap-8 items-center grayscale opacity-50">
                <span className="text-white font-black text-sm tracking-tighter">SIMPLEBIT</span>
@@ -172,12 +172,12 @@ function MobileNavLink({ href, children }: any) {
 function FooterColumn({ title, links }: { title: string; links: any[] }) {
   return (
     <div>
-      <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-gray-500 mb-8">{title}</h4>
+      <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/70 mb-8">{title}</h4>
       <ul className="space-y-4">
         {links.map((link) => (
           <li key={link.label}>
             <Link href={link.href}>
-              <a className="text-sm font-bold text-gray-400 hover:text-white transition-colors">{link.label}</a>
+              <a className="text-sm font-bold text-white/50 hover:text-white transition-colors">{link.label}</a>
             </Link>
           </li>
         ))}

@@ -12,17 +12,6 @@ export default function Home() {
     <Layout>
       <Hero />
       
-      {/* Social Proof */}
-      <section className="py-12 bg-black overflow-hidden border-t border-white/10">
-        <div className="container-wide">
-          <div className="flex flex-wrap justify-between items-center gap-8 opacity-60 grayscale invert">
-            {['The National', 'Forbes', 'Entrepreneur', 'DMC', '50 Million Businesses'].map((brand) => (
-              <span key={brand} className="text-lg md:text-xl font-black tracking-tighter text-white">{brand}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Feature 1: Capture */}
       <section className="section-padding bg-white overflow-hidden">
         <div className="container-wide">
@@ -36,7 +25,7 @@ export default function Home() {
                 Sell like never before. Introduce checkout to the channels that matter the most to your customers.
               </p>
               <div className="pt-2">
-                <Button className="btn-gradient px-10 h-12 text-sm font-bold">
+                <Button className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold">
                   Get started
                 </Button>
               </div>
@@ -108,7 +97,7 @@ export default function Home() {
                <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase">Turn chat <br/>into <br/>cash flow.</h2>
                <p className="text-xl text-gray-400 leading-tight max-w-md">Easily create invoices and close sales directly within the messaging apps your customers already use and love.</p>
                <div className="pt-4 flex flex-col gap-8">
-                  <Button className="btn-gradient-green px-10 h-12 text-sm font-bold w-fit">
+                  <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
                     View demo
                   </Button>
                   <div className="flex items-center gap-6">
@@ -139,7 +128,7 @@ export default function Home() {
                 <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">Scale your <br/>reach.</h2>
                 <p className="text-2xl text-gray-500 font-medium leading-tight">Enable global payments seamlessly and start selling across borders today.</p>
                 <div className="flex flex-wrap gap-4">
-                  <Button className="btn-gradient px-10 h-12 text-sm font-bold">
+                  <Button className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold">
                     Tell me more
                   </Button>
                 </div>
@@ -233,62 +222,12 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                  <Button className="btn-gradient-green px-10 h-12 text-sm font-bold">
+                  <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
                     Explore Analytics
                   </Button>
                </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Why SimpleBit? Improved */}
-      <section className="section-padding bg-black text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00E676]/5 blur-[150px] rounded-full pointer-events-none" />
-        
-        <div className="container-wide text-center mb-24 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6">Why SimpleBit?</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-xl leading-snug">We're bridging the gap between social interaction and commerce, enabling businesses to thrive where conversations happen.</p>
-          </motion.div>
-        </div>
-        
-        <div className="container-wide grid lg:grid-cols-3 gap-8 relative z-10">
-          {[
-            { label: 'Messaging Open Rate', value: '98%', desc: 'Compared to just 15% for traditional email marketing. Reach customers where they are already active.', color: 'primary' },
-            { label: 'Sales Increase', value: '87%', desc: 'Merchants see a massive jump in conversion when switching to personalized chat-based commerce.', color: 'accent' },
-            { label: 'Global Reach', value: '22+', desc: 'Support for businesses across multiple countries and currencies with seamless localized payments.', color: 'white' }
-          ].map((stat, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
-              className="p-10 rounded-[3.5rem] bg-white/5 border border-white/10 transition-all duration-500 group"
-            >
-              <p className={`text-6xl md:text-8xl font-black mb-8 transition-transform duration-500 group-hover:scale-110 ${stat.color === 'primary' ? 'text-primary' : stat.color === 'accent' ? 'text-[#00E676]' : 'text-white'}`}>
-                {stat.value}
-              </p>
-              <h4 className="text-2xl font-black mb-4 tracking-tight">{stat.label}</h4>
-              <p className="text-gray-500 text-base leading-relaxed font-medium">{stat.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="container-wide mt-24 pt-24 border-t border-white/10 relative z-10">
-           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
-              <StatItem label="Response Time" value="4h" subValue="Merchant Avg" />
-              <StatItem label="Customer Loyalty" value="70%" subValue="Repeat Purchase" />
-              <StatItem label="Checkout Speed" value="2x" subValue="Faster Sales" />
-              <StatItem label="Merchant Trust" value="50k+" subValue="Global Users" />
-           </div>
         </div>
       </section>
 
@@ -301,7 +240,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter uppercase leading-[0.9]">Who We Serve.</h2>
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Who We Serve.</h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-xl font-medium leading-tight">From boutique designers to global enterprises, we empower every business to meet their customers where they spend their time.</p>
           </motion.div>
         </div>
@@ -353,9 +292,79 @@ export default function Home() {
             ))}
           </div>
 
-          <Button className="btn-gradient px-12 h-16 text-lg font-bold shadow-2xl">
+          <Button className="bg-black text-white hover:bg-black/90 px-12 h-16 text-lg font-bold shadow-2xl">
             See all success stories
           </Button>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="bg-white py-20">
+        <div className="container-wide">
+          <div className="bg-black rounded-[3rem] p-12 md:p-20 text-center space-y-10 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
+            <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-tight relative z-10">
+              Ready to grow <br/>your business?
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+              <Button className="bg-white text-black hover:bg-white/90 px-12 h-16 text-lg font-bold">
+                Download App
+              </Button>
+              <Button className="bg-primary text-white hover:bg-primary/90 px-12 h-16 text-lg font-bold">
+                Request Demo
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why SimpleBit? Improved */}
+      <section className="section-padding bg-black text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00E676]/5 blur-[150px] rounded-full pointer-events-none" />
+        
+        <div className="container-wide text-center mb-24 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Why SimpleBit?</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-xl leading-snug">We're bridging the gap between social interaction and commerce, enabling businesses to thrive where conversations happen.</p>
+          </motion.div>
+        </div>
+        
+        <div className="container-wide grid lg:grid-cols-3 gap-8 relative z-10">
+          {[
+            { label: 'Messaging Open Rate', value: '98%', desc: 'Compared to just 15% for traditional email marketing. Reach customers where they are already active.', color: 'primary' },
+            { label: 'Sales Increase', value: '87%', desc: 'Merchants see a massive jump in conversion when switching to personalized chat-based commerce.', color: 'accent' },
+            { label: 'Global Reach', value: '22+', desc: 'Support for businesses across multiple countries and currencies with seamless localized payments.', color: 'white' }
+          ].map((stat, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -10, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
+              className="p-10 rounded-[3.5rem] bg-white/5 border border-white/10 transition-all duration-500 group"
+            >
+              <p className={`text-6xl md:text-8xl font-black mb-8 transition-transform duration-500 group-hover:scale-110 ${stat.color === 'primary' ? 'text-primary' : stat.color === 'accent' ? 'text-[#00E676]' : 'text-white'}`}>
+                {stat.value}
+              </p>
+              <h4 className="text-2xl font-black mb-4 tracking-tight">{stat.label}</h4>
+              <p className="text-gray-500 text-base leading-relaxed font-medium">{stat.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="container-wide mt-24 pt-24 border-t border-white/10 relative z-10">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
+              <StatItem label="Response Time" value="4h" subValue="Merchant Avg" />
+              <StatItem label="Customer Loyalty" value="70%" subValue="Repeat Purchase" />
+              <StatItem label="Checkout Speed" value="2x" subValue="Faster Sales" />
+              <StatItem label="Merchant Trust" value="50k+" subValue="Global Users" />
+           </div>
         </div>
       </section>
     </Layout>

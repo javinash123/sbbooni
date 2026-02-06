@@ -9,7 +9,7 @@ export function Hero() {
       {/* Background Image/Overlay */}
       <div className="absolute inset-0 z-0">
          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" />
-         <div className="absolute inset-0 bg-black/20" />
+         <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container-wide relative z-10">
@@ -18,7 +18,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-[100px] font-black font-heading leading-[0.85] tracking-tighter text-white uppercase drop-shadow-2xl"
+            className="text-5xl md:text-8xl font-black font-heading leading-[0.85] tracking-tighter text-white uppercase drop-shadow-2xl"
           >
             Say hello <br />
             to Commerce.
@@ -34,10 +34,10 @@ export function Hero() {
               The next generation platform for personalised commerce. <br/>Sell more with a human connection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
-              <Button className="btn-gradient-green px-10 h-12 text-sm font-bold">
+              <Button className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold">
                 Download App
               </Button>
-              <Button className="btn-gradient px-10 h-12 text-sm font-bold">
+              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
                 Request Demo
               </Button>
             </div>

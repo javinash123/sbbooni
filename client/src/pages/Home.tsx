@@ -342,7 +342,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Why SimpleBit Section - Professional Redesign */}
+      {/* Why SimpleBit Section - Modern Redesign */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -350,77 +350,149 @@ export default function Home() {
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="section-padding bg-slate-950 text-white overflow-hidden relative"
       >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+        
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
-                Why <br/><span className="text-primary">SimpleBit?</span>
-              </h2>
-              <p className="text-xl text-gray-400 font-medium max-w-md leading-tight">
-                Traditional commerce is broken. We're building the infrastructure for how people actually want to shop today.
-              </p>
-              
-              <div className="space-y-6 pt-8">
-                {[
-                  { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-primary" },
-                  { percent: 70, text: "of shoppers say they would only engage with personalized marketing messages.", color: "text-[#3B82F6]" },
-                  { percent: 53, text: "of shoppers say they would rather buy from companies they can reach by chat.", color: "text-[#EAB308]" }
-                ].map((stat, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-6 group"
-                  >
-                    <div className="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
-                      <svg className="w-full h-full -rotate-90">
-                        <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" className="text-white/5" />
-                        <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeDasharray="175.9" strokeDashoffset={175.9 * (1 - stat.percent/100)} className={stat.color} />
-                      </svg>
-                      <span className="absolute text-sm font-black tracking-tighter">{stat.percent}%</span>
-                    </div>
-                    <p className="text-white/70 font-medium text-base leading-snug group-hover:text-white transition-colors">{stat.text}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              The Next Evolution
+            </motion.div>
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-8">
+              Why <span className="text-primary">SimpleBit?</span>
+            </h2>
+            <p className="text-xl text-gray-400 font-medium leading-tight">
+              Traditional commerce is broken. We're building the infrastructure for how people actually want to shop today.
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="bg-white/5 rounded-[3rem] p-10 border border-white/10 backdrop-blur-sm relative overflow-hidden">
-                <div className="flex flex-col gap-12">
-                  <div className="flex items-end justify-between">
-                    <div className="space-y-4 text-center">
-                      <div className="w-40 h-40 mx-auto relative flex items-center justify-center">
-                        <svg className="w-full h-full -rotate-90">
-                          <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
-                          <circle cx="80" cy="80" r="72" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeLinecap="round" strokeDasharray="452.4" strokeDashoffset={452.4 * (1 - 0.98)} />
-                        </svg>
-                        <span className="absolute text-4xl font-black tracking-tighter">98%</span>
-                      </div>
-                      <p className="font-black uppercase tracking-widest text-[10px] text-primary">Messaging Open Rate</p>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              { 
+                percent: 87, 
+                title: "Social Shopping",
+                text: "of shoppers believe social channels help them make a shopping decision.", 
+                color: "text-primary",
+                icon: Instagram
+              },
+              { 
+                percent: 70, 
+                title: "Hyper-Personalization",
+                text: "of shoppers say they would only engage with personalized marketing messages.", 
+                color: "text-[#3B82F6]",
+                icon: Zap
+              },
+              { 
+                percent: 53, 
+                title: "Conversational Trust",
+                text: "of shoppers say they would rather buy from companies they can reach by chat.", 
+                color: "text-[#EAB308]",
+                icon: MessageCircle
+              }
+            ].map((stat, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                className="bg-white/5 rounded-[2.5rem] p-10 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all duration-500"
+              >
+                <div className="flex flex-col items-center text-center space-y-6">
+                  <div className="relative w-24 h-24 flex items-center justify-center">
+                    <svg className="w-full h-full -rotate-90">
+                      <circle cx="48" cy="48" r="44" fill="none" stroke="currentColor" strokeWidth="4" className="text-white/5" />
+                      <motion.circle 
+                        cx="48" cy="48" r="44" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" 
+                        initial={{ strokeDashoffset: 276.46 }}
+                        whileInView={{ strokeDashoffset: 276.46 * (1 - stat.percent/100) }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 2, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
+                        strokeDasharray="276.46"
+                        className={stat.color} 
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <stat.icon className={cn("w-6 h-6 mb-1 opacity-50 group-hover:opacity-100 transition-opacity", stat.color)} />
+                      <span className="text-2xl font-black tracking-tighter">{stat.percent}%</span>
                     </div>
-                    
-                    <div className="pb-12 text-2xl font-black text-gray-700 italic px-4">VS</div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">{stat.title}</h3>
+                    <p className="text-white/60 font-medium leading-relaxed">{stat.text}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-                    <div className="space-y-4 text-center">
-                      <div className="w-32 h-32 mx-auto relative flex items-center justify-center">
-                        <svg className="w-full h-full -rotate-90">
-                          <circle cx="64" cy="64" r="58" fill="none" stroke="currentColor" strokeWidth="10" className="text-white/5" />
-                          <circle cx="64" cy="64" r="58" fill="none" stroke="#3B82F6" strokeWidth="10" strokeLinecap="round" strokeDasharray="364.4" strokeDashoffset={364.4 * (1 - 0.1)} />
-                        </svg>
-                        <span className="absolute text-2xl font-black tracking-tighter text-gray-400">10%</span>
-                      </div>
-                      <p className="font-black uppercase tracking-widest text-[10px] text-gray-500">Email Open Rate</p>
+          <div className="mt-20 bg-white/5 rounded-[3.5rem] p-12 md:p-20 border border-white/10 backdrop-blur-sm relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -mr-48 -mt-48 blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full -ml-48 -mb-48 blur-[100px] pointer-events-none" />
+            
+            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+              <div className="space-y-10">
+                <h3 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
+                  Communication <br/>is the <span className="text-primary">new checkout.</span>
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
+                      <MessageCircle className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <p className="text-3xl font-black">98%</p>
+                      <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Messaging Open Rate</p>
+                    </div>
+                  </div>
+                  <div className="w-full h-px bg-white/10" />
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-gray-400">
+                      <Globe className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <p className="text-3xl font-black text-gray-500">20%</p>
+                      <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Average Email Open Rate</p>
                     </div>
                   </div>
                 </div>
+                <Button className="bg-white text-black hover:bg-white/90 px-10 h-14 rounded-2xl text-sm font-bold w-full md:w-fit">
+                  Scale your reach
+                </Button>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative">
+                <div className="aspect-square bg-slate-900 rounded-[3rem] border border-white/5 p-8 flex flex-col justify-between overflow-hidden relative group-hover:border-white/10 transition-colors">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-1">
+                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Revenue Growth</p>
+                      <p className="text-4xl font-black text-white">+156%</p>
+                    </div>
+                    <div className="px-3 py-1 rounded-full bg-green-500/20 text-green-500 text-[10px] font-bold uppercase tracking-widest">
+                      Live
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 flex items-end gap-2 pt-8">
+                    {[30, 45, 35, 60, 55, 80, 70, 95, 85, 100].map((h, i) => (
+                      <motion.div 
+                        key={i}
+                        initial={{ height: 0 }}
+                        whileInView={{ height: `${h}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 + (i * 0.1) }}
+                        className="flex-1 bg-gradient-to-t from-primary/20 to-primary rounded-t-lg"
+                      />
+                    ))}
+                  </div>
+
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary blur-[80px] opacity-20 pointer-events-none" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

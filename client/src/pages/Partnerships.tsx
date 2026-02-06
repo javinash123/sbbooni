@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const partners = [
   {
@@ -20,34 +21,39 @@ export default function Partnerships() {
     <Layout>
       <div className="bg-black pt-40 pb-56">
         <div className="container-wide">
-          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter -mt-4">Partnerships</h1>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter text-center uppercase">Partnerships</h1>
+          <p className="text-white/60 text-center mt-6 text-xl max-w-2xl mx-auto font-medium">
+            Collaborating with industry leaders to build the infrastructure of modern commerce.
+          </p>
         </div>
       </div>
 
-      <div className="bg-[#f8f9fa] pb-20 -mt-40">
-        <div className="container-wide">
-          <div className="flex flex-col gap-8 max-w-6xl mx-auto relative z-10">
-            {partners.map((partner, index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl bg-white">
-                <div className="flex flex-col md:flex-row items-stretch">
-                  <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h2 className="text-3xl font-black mb-6 tracking-tight">{partner.title}</h2>
-                    <p className="text-gray-600 mb-8 text-lg leading-relaxed font-medium">
-                      {partner.description}
-                    </p>
-                    <Button className="w-fit rounded-full px-8 h-12 font-bold text-sm uppercase tracking-widest bg-black text-white hover:bg-gray-800 transition-all">
-                      Learn More
-                    </Button>
-                  </div>
-                  <div className="md:w-2/5 p-12 flex items-center justify-center bg-gray-50/50">
-                    <div className="aspect-square w-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-8 border border-gray-100">
-                      <img src={partner.logo} alt={partner.title} className="max-h-full max-w-full object-contain" />
-                    </div>
-                  </div>
+      <div className="container-wide pb-24 -mt-40 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {partners.map((partner, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 rounded-[2.5rem] bg-white group h-full flex flex-col">
+                <div className="aspect-video overflow-hidden bg-gray-50/50 flex items-center justify-center p-12">
+                  <img src={partner.logo} alt={partner.title} className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700" />
                 </div>
+                <CardContent className="p-8 md:p-12 flex-1 flex flex-col">
+                  <h2 className="text-3xl font-black mb-6 tracking-tight group-hover:text-primary transition-colors">{partner.title}</h2>
+                  <p className="text-gray-500 mb-8 text-lg leading-relaxed font-medium flex-1">
+                    {partner.description}
+                  </p>
+                  <Button variant="ghost" className="p-0 font-black text-sm uppercase tracking-widest hover:bg-transparent hover:text-primary transition-colors w-fit">
+                    Learn More →
+                  </Button>
+                </CardContent>
               </Card>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </Layout>

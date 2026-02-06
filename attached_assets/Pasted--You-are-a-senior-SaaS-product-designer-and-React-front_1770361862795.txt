@@ -1,0 +1,127 @@
+> You are a **senior SaaS product designer and React frontend engineer**.
+>
+> Redesign the **SimpleBit** website as a **modern, premium SaaS website**.
+>
+> ❗ **Critical Instruction**
+>
+> * Do **NOT** follow or reuse the layout, spacing, component structure, or visual hierarchy of SimpleBit’s existing website.
+> * Treat the existing SimpleBit site only as a **content source**, NOT a design reference.
+> * The **ONLY design reference** for layout, interaction, spacing, animations, and section structure is **[https://www.zbooni.com/](https://www.zbooni.com/)**.
+>
+> ---
+>
+> ### Technology
+>
+> * ReactJS (functional components)
+> * Modern CSS (Tailwind or styled-components preferred)
+> * Mobile-first, fully responsive
+>
+> ---
+>
+> ### Visual Style (Strict)
+>
+> * Overall look must feel **enterprise-grade SaaS**, similar to zbooni.com
+> * Large whitespace
+> * Card-based sections
+> * Subtle shadows
+> * Smooth hover animations
+> * Gradient CTAs and hover states
+>
+> ### Brand Colors
+>
+> * Primary: Violet Blue gradient
+> * Secondary: White
+> * Accent: Black
+>
+> Buttons, links, and hover effects must use **violet-blue gradients**, inspired by zbooni but not copied.
+>
+> ---
+>
+> ### Header Behavior
+>
+> * Header starts **transparent over hero section**
+> * On scroll:
+>
+>   * Becomes **sticky**
+>   * Solid background
+>   * Slight shadow
+>
+> ### Header Menu Structure
+>
+> * Features
+>
+>   * Capture
+>   * Accept
+>   * Sell
+>   * Track
+> * Who We Serve
+> * Pricing
+> * Simple Hub
+>
+>   * Knowledgebase
+>   * Blogs
+>   * Case Studies
+>   * Partnership
+> * Login
+> * Request Demo (primary gradient CTA)
+>
+> ---
+>
+> ### Hero Section (Mandatory zbooni-style)
+>
+> * Full-width hero
+> * Left-aligned text, right-aligned image (desktop)
+> * Large bold headline
+> * Supporting paragraph
+> * Two CTAs (primary gradient + secondary outline)
+> * Subtle background gradient or abstract shapes
+>
+> ---
+>
+> ### Page Structure (Important)
+>
+> Each page should:
+>
+> * Use **section-based layouts**
+> * Avoid stacked text-only sections
+> * Include icons, cards, grids
+>
+> Pages to implement:
+>
+> * Home
+> * Features (with individual feature sections)
+> * Who We Serve
+> * Pricing
+> * Simple Hub pages
+> * About Us
+> * Contact Us
+> * Legal pages
+>
+> ---
+>
+> ### Footer
+>
+> * Multi-column SaaS footer
+> * Includes:
+>
+>   * All header links
+>   * About Us
+>   * Contact Us
+> * Bottom bar:
+>
+>   * Terms & Conditions
+>   * Privacy Policy
+>   * Payment Policy
+>   * Social media icons
+>
+> ---
+>
+> ### UX & Polish (Do Not Skip)
+>
+> * Hover animations on:
+>
+>   * Buttons
+>   * Menu items
+>   * Cards
+> * Smooth scroll
+> * Consistent spacing scale

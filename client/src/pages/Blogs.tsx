@@ -43,15 +43,15 @@ const blogs = [
 export default function Blogs() {
   return (
     <Layout>
-      <div className="bg-black py-20">
+      <div className="bg-black pt-32 pb-48">
         <div className="container-wide">
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">Blogs</h1>
+          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter -mt-4">Blogs</h1>
         </div>
       </div>
       
-      <div className="bg-[#f8f9fa] py-20">
+      <div className="bg-[#f8f9fa] pb-20 -mt-32">
         <div className="container-wide">
-          <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col gap-8 max-w-6xl mx-auto relative z-10">
             {blogs.map((blog, index) => (
               <Card key={index} className="overflow-hidden border-none shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl bg-white">
                 <div className="flex flex-col md:flex-row items-stretch">

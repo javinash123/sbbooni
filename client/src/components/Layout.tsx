@@ -44,9 +44,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 label="Features" 
                 links={[
                   { label: "Capture", href: "/features/capture" },
-                  { label: "Accept", href: "#accept" },
-                  { label: "Sell", href: "#sell" },
-                  { label: "Track", href: "#track" },
+                  { label: "Accept", href: "/features/accept" },
+                  { label: "Sell", href: "/features/sell" },
+                  { label: "Track", href: "/features/track" },
                 ]} 
               />
               <NavLink href="/who-we-serve">Who We Serve</NavLink>
@@ -159,7 +159,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-            <p>&copy; {new Date().getFullYear()} SimpleBit. All rights reserved. | <Link href="/privacy">Privacy Policy</Link> | <Link href="/terms">Terms of Service</Link></p>
+            <p>&copy; {new Date().getFullYear()} SimpleBit. All rights reserved. | <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link> | <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></p>
             <div className="flex gap-8 items-center grayscale opacity-50">
                <span className="text-white font-black text-sm tracking-tighter">SIMPLEBIT</span>
             </div>

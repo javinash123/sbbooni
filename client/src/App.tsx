@@ -7,6 +7,9 @@ import WhoWeServe from "@/pages/who-we-serve";
 import Pricing from "@/pages/pricing";
 import Home from "@/pages/Home";
 import Capture from "@/pages/Capture";
+import AboutUs from "@/pages/AboutUs";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 import Layout from "@/components/Layout";
 
@@ -27,12 +30,13 @@ function Router() {
       <Route path="/who-we-serve" component={WhoWeServe} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/features/capture" component={Capture} />
+      <Route path="/features/accept" component={Capture} />
+      <Route path="/features/sell" component={Capture} />
+      <Route path="/features/track" component={Capture} />
+      <Route path="/about" component={AboutUs} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={Terms} />
       <Route path="/features" component={() => <PlaceholderPage title="Features" />} />
-      <Route path="/hub" component={() => <PlaceholderPage title="Simple Hub" />} />
-      <Route path="/about" component={() => <PlaceholderPage title="About Us" />} />
-      <Route path="/contact" component={() => <PlaceholderPage title="Contact Us" />} />
-      <Route path="/login" component={() => <PlaceholderPage title="Login" />} />
-      <Route path="/demo" component={() => <PlaceholderPage title="Request Demo" />} />
       <Route component={NotFound} />
     </Switch>
   );

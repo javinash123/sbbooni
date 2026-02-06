@@ -13,10 +13,22 @@ export default function Home() {
       <Hero />
       
       {/* Feature 1: Capture */}
-      <section className="section-padding bg-white overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-white overflow-hidden"
+      >
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="order-2 lg:order-1 space-y-6"
+            >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest">
                 <Zap className="w-3 h-3" /> Step 1: Capture
               </div>
@@ -29,8 +41,14 @@ export default function Home() {
                   Get started
                 </Button>
               </div>
-            </div>
-            <div className="order-1 lg:order-2 relative">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="order-1 lg:order-2 relative"
+            >
                <div className="zbooni-shadow rounded-[3rem] overflow-hidden bg-white p-4 group">
                   <div className="aspect-[4/5] bg-gradient-to-br from-blue-400 to-purple-500 rounded-[2.5rem] relative overflow-hidden">
                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -46,23 +64,39 @@ export default function Home() {
                     <motion.div 
                       key={i} 
                       whileHover={{ scale: 1.1 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.6 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
                       className="w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-black border border-gray-50 cursor-pointer"
                     >
                       <Icon className="w-6 h-6" />
                     </motion.div>
                   ))}
                </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Feature 2: Accept */}
-      <section className="section-padding bg-black text-white overflow-hidden relative">
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-black text-white overflow-hidden relative"
+      >
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative group">
+            <motion.div 
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative group"
+            >
                <div className="aspect-video bg-gray-900 rounded-[3rem] overflow-hidden shadow-2xl relative">
                   <img src="https://images.unsplash.com/photo-1556740734-793864bb358c?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -75,8 +109,10 @@ export default function Home() {
                   </div>
                </div>
                <motion.div 
-                 initial={{ x: 50, opacity: 0 }}
-                 whileInView={{ x: 0, opacity: 1 }}
+                 initial={{ y: 50, opacity: 0 }}
+                 whileInView={{ y: 0, opacity: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                  className="absolute -bottom-10 right-10 w-64 bg-white p-6 rounded-3xl shadow-2xl text-black border border-gray-100"
                >
                   <p className="text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-widest">Live Transaction</p>
@@ -89,8 +125,14 @@ export default function Home() {
                     </div>
                   </div>
                </motion.div>
-            </div>
-            <div className="space-y-8">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="space-y-8"
+            >
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-widest">
                 <CreditCard className="w-3 h-3" /> Step 2: Accept
                </div>
@@ -101,27 +143,51 @@ export default function Home() {
                     View demo
                   </Button>
                   <div className="flex items-center gap-6">
-                     <div className="space-y-1">
+                     <motion.div 
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                       className="space-y-1"
+                     >
                         <p className="text-5xl font-black text-primary">58%</p>
                         <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Conversion Rate</p>
-                     </div>
+                     </motion.div>
                      <div className="h-12 w-px bg-white/10" />
-                     <div className="space-y-1">
+                     <motion.div 
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                       className="space-y-1"
+                     >
                         <p className="text-5xl font-black text-white">2.4x</p>
                         <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Faster Checkout</p>
-                     </div>
+                     </motion.div>
                   </div>
                </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Feature 3: Sell */}
-      <section className="section-padding bg-white relative overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-white relative overflow-hidden"
+      >
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
-             <div className="space-y-10">
+             <motion.div 
+               initial={{ opacity: 0, y: 50 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+               className="space-y-10"
+             >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest">
                   <ShoppingBag className="w-3 h-3" /> Step 3: Sell
                 </div>
@@ -133,17 +199,35 @@ export default function Home() {
                   </Button>
                 </div>
                 <div className="grid grid-cols-2 gap-8 pt-10 border-t border-gray-100">
-                   <div className="space-y-1">
+                   <motion.div 
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                     className="space-y-1"
+                   >
                       <p className="text-5xl font-black tracking-tighter text-black">1.9x</p>
                       <p className="text-gray-400 font-bold uppercase text-[10px] tracking-widest leading-none">Higher order value</p>
-                   </div>
-                   <div className="space-y-1">
+                   </motion.div>
+                   <motion.div 
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                     className="space-y-1"
+                   >
                       <p className="text-5xl font-black tracking-tighter text-primary">300+</p>
                       <p className="text-gray-400 font-bold uppercase text-[10px] tracking-widest leading-none">Global partners</p>
-                   </div>
+                   </motion.div>
                 </div>
-             </div>
-             <div className="relative group">
+             </motion.div>
+             <motion.div 
+               initial={{ opacity: 0, y: 100 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+               className="relative group"
+             >
                 <div className="bg-gray-50 rounded-[4rem] p-12 border border-gray-100 relative overflow-hidden zbooni-shadow">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-3xl" />
                    <p className="font-black text-xl mb-10">Payments simplified.</p>
@@ -166,23 +250,37 @@ export default function Home() {
                       </div>
                    </div>
                 </div>
-             </div>
+             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Feature 4: Track */}
-      <section className="section-padding bg-black text-white overflow-hidden relative">
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-black text-white overflow-hidden relative"
+      >
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 relative group">
+            <motion.div 
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="order-2 lg:order-1 relative group"
+            >
                 <div className="zbooni-shadow rounded-[3rem] overflow-hidden bg-gray-900 border border-white/10 p-4">
                   <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800" className="w-full aspect-square object-cover rounded-[2.5rem] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <motion.div 
-                  initial={{ y: 20, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute -right-10 top-1/4 bg-white p-6 rounded-3xl shadow-2xl text-black space-y-4 w-64 border border-gray-100"
                 >
                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Real-time Analytics</p>
@@ -192,14 +290,22 @@ export default function Home() {
                            <motion.div 
                              initial={{ height: 0 }}
                              whileInView={{ height: `${h}%` }}
+                             viewport={{ once: true }}
+                             transition={{ duration: 1.5, delay: 0.6 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
                              className="absolute bottom-0 left-0 right-0 bg-primary rounded-t-lg"
                            />
                         </div>
                       ))}
                    </div>
                 </motion.div>
-            </div>
-            <div className="order-1 lg:order-2 space-y-10">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="order-1 lg:order-2 space-y-10"
+            >
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-widest">
                   <BarChart3 className="w-3 h-3" /> Step 4: Track
                </div>
@@ -213,12 +319,19 @@ export default function Home() {
                         'Smart insights to optimize your sales funnel.',
                         'Complete financial reporting and reconciliation.'
                       ].map((text, i) => (
-                        <li key={i} className="flex gap-4 items-start">
+                        <motion.li 
+                          key={i} 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, delay: 0.4 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
+                          className="flex gap-4 items-start"
+                        >
                           <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
                             <Check className="w-3 h-3 text-primary" />
                           </div>
                           <span className="text-gray-400 font-medium">{text}</span>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>
@@ -226,19 +339,26 @@ export default function Home() {
                     Explore Analytics
                   </Button>
                </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Who We Serve Improved */}
-      <section className="section-padding bg-white text-center relative overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-white text-center relative overflow-hidden"
+      >
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-50 to-transparent" />
         <div className="container-wide mb-20 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Who We Serve.</h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-xl font-medium leading-tight">From boutique designers to global enterprises, we empower every business to meet their customers where they spend their time.</p>
@@ -269,10 +389,10 @@ export default function Home() {
             ].map((item, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 1, delay: 0.4 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ y: -10 }}
                 className="relative h-[500px] rounded-[4rem] overflow-hidden group cursor-pointer shadow-2xl shadow-black/5"
               >
@@ -292,42 +412,75 @@ export default function Home() {
             ))}
           </div>
 
-          <Button className="bg-black text-white hover:bg-black/90 px-12 h-16 text-lg font-bold shadow-2xl">
-            See all success stories
-          </Button>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Button className="bg-black text-white hover:bg-black/90 px-12 h-16 text-lg font-bold shadow-2xl">
+              See all success stories
+            </Button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CTA Banner */}
-      <section className="bg-white py-20">
+      {/* CTA Banner - Moved below Why SimpleBit and styled as horizontal rectangle */}
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="bg-white py-20"
+      >
         <div className="container-wide">
-          <div className="bg-black rounded-[3rem] p-12 md:p-20 text-center space-y-10 relative overflow-hidden">
+          <div className="bg-black rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
-            <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-tight relative z-10">
-              Ready to grow <br/>your business?
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-              <Button className="bg-white text-black hover:bg-white/90 px-12 h-16 text-lg font-bold">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-tight relative z-10 text-center md:text-left"
+            >
+              Ready to grow <br className="hidden md:block" />your business?
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col sm:flex-row gap-4 relative z-10"
+            >
+              <Button className="bg-white text-black hover:bg-white/90 px-10 h-14 text-sm font-bold rounded-xl">
                 Download App
               </Button>
-              <Button className="bg-primary text-white hover:bg-primary/90 px-12 h-16 text-lg font-bold">
+              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-14 text-sm font-bold rounded-xl">
                 Request Demo
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why SimpleBit? Improved */}
-      <section className="section-padding bg-black text-white relative overflow-hidden">
+      <motion.section 
+        id="why" 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="section-padding bg-black text-white relative overflow-hidden"
+      >
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00E676]/5 blur-[150px] rounded-full pointer-events-none" />
         
         <div className="container-wide text-center mb-24 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Why SimpleBit?</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-xl leading-snug">We're bridging the gap between social interaction and commerce, enabling businesses to thrive where conversations happen.</p>
@@ -342,10 +495,10 @@ export default function Home() {
           ].map((stat, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ duration: 1, delay: 0.4 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -10, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
               className="p-10 rounded-[3.5rem] bg-white/5 border border-white/10 transition-all duration-500 group"
             >
@@ -358,15 +511,21 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="container-wide mt-24 pt-24 border-t border-white/10 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="container-wide mt-24 pt-24 border-t border-white/10 relative z-10"
+        >
            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
               <StatItem label="Response Time" value="4h" subValue="Merchant Avg" />
               <StatItem label="Customer Loyalty" value="70%" subValue="Repeat Purchase" />
               <StatItem label="Checkout Speed" value="2x" subValue="Faster Sales" />
               <StatItem label="Merchant Trust" value="50k+" subValue="Global Users" />
            </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </Layout>
   );
 }

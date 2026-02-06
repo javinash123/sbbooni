@@ -3,6 +3,8 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import WhoWeServe from "@/pages/who-we-serve";
+import Pricing from "@/pages/pricing";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import Layout from "@/components/Layout";
@@ -21,9 +23,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/who-we-serve" component={WhoWeServe} />
+      <Route path="/pricing" component={Pricing} />
       <Route path="/features" component={() => <PlaceholderPage title="Features" />} />
-      <Route path="/who-we-serve" component={() => <PlaceholderPage title="Who We Serve" />} />
-      <Route path="/pricing" component={() => <PlaceholderPage title="Pricing" />} />
       <Route path="/hub" component={() => <PlaceholderPage title="Simple Hub" />} />
       <Route path="/about" component={() => <PlaceholderPage title="About Us" />} />
       <Route path="/contact" component={() => <PlaceholderPage title="Contact Us" />} />

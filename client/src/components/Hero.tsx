@@ -52,7 +52,7 @@ export function Hero() {
                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">cShop</p>
                <h3 className="text-xl font-black text-white mb-3">Discover, chat, <br/>and shop.</h3>
                <Button className="bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold px-5 h-8 rounded-full border border-white/20">
-                  Explore cShop today
+                  Download Report
                </Button>
             </div>
             <div className="w-28 h-36 bg-gray-800 rounded-xl overflow-hidden relative shadow-2xl">

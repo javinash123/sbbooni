@@ -28,32 +28,45 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container-wide flex items-center justify-between">
-          <Link href="/">
-            <a className="text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
-              <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-[#00E676] transition-colors duration-300">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              SimpleBit
-            </a>
+          <Link href="/" className="text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
+            <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-[#00E676] transition-colors duration-300">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            SimpleBit
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:block">
             <nav className="flex items-center gap-8">
-              <NavLink href="/features">Features <ChevronDown className="w-3.5 h-3.5 inline ml-1 opacity-50" /></NavLink>
+              <NavDropdown 
+                label="Features" 
+                links={[
+                  { label: "Capture", href: "#capture" },
+                  { label: "Accept", href: "#accept" },
+                  { label: "Sell", href: "#sell" },
+                  { label: "Track", href: "#track" },
+                ]} 
+              />
               <NavLink href="/who-we-serve">Who We Serve</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
-              <NavLink href="/about">About Us</NavLink>
-              <NavLink href="/hub">Simple Hub <ChevronDown className="w-3.5 h-3.5 inline ml-1 opacity-50" /></NavLink>
+              <NavDropdown 
+                label="Simple Hub" 
+                links={[
+                  { label: "Knowledgebase", href: "/hub/knowledgebase" },
+                  { label: "Blogs", href: "/hub/blogs" },
+                  { label: "Case Studies", href: "/hub/case-studies" },
+                  { label: "Partnership", href: "/hub/partnership" },
+                ]} 
+              />
             </nav>
           </div>
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-5">
             <Link href="/login">
-              <Button variant="outline" className="h-10 px-6 font-bold text-[10px] uppercase tracking-widest">
+              <Button variant="ghost" className="h-10 px-6 font-bold text-[10px] uppercase tracking-widest text-white hover:text-[#00E676] hover:bg-transparent">
                 Dashboard Login
               </Button>
             </Link>
@@ -74,8 +87,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <MobileNavLink href="/pricing">Pricing</MobileNavLink>
                   <MobileNavLink href="/hub">Simple Hub</MobileNavLink>
                   <div className="h-px bg-white/10 my-4" />
-                  <Link href="/login">
-                    <a className="text-4xl font-black">Login</a>
+                  <Link href="/login" className="text-4xl font-black">
+                    Login
                   </Link>
                   <Link href="/demo">
                     <GradientButton className="w-full py-8 text-xl rounded-2xl">Request Demo</GradientButton>
@@ -97,15 +110,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-24">
             <div className="col-span-1 lg:col-span-2 space-y-8">
-              <Link href="/">
-                <a className="text-3xl font-black tracking-tighter flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                  </div>
-                  SimpleBit
-                </a>
+              <Link href="/" className="text-3xl font-black tracking-tighter flex items-center gap-3">
+                 <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                SimpleBit
               </Link>
               <p className="text-white/60 text-lg leading-relaxed max-w-sm font-medium">
                 The next generation platform for personalised commerce. SimpleBit provides everything you need to sell.
@@ -153,18 +164,33 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 function NavLink({ href, children }: any) {
   return (
-    <Link href={href}>
-      <a className="font-bold text-[12px] uppercase tracking-widest text-white/80 hover:text-white transition-colors">
-        {children}
-      </a>
+    <Link href={href} className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-[#00E676] transition-colors">
+      {children}
     </Link>
+  );
+}
+
+function NavDropdown({ label, links }: { label: string; links: { label: string; href: string }[] }) {
+  return (
+    <div className="relative group py-4">
+      <button className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-[#00E676] transition-colors flex items-center gap-1">
+        {label} <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+      </button>
+      <div className="absolute top-full left-0 w-48 bg-black border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[100]">
+        {links.map((link) => (
+          <Link key={link.label} href={link.href} className="block px-4 py-2 text-sm font-bold text-white/70 hover:text-[#00E676] hover:bg-white/5 transition-colors">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
 function MobileNavLink({ href, children }: any) {
   return (
-    <Link href={href}>
-      <a className="text-5xl font-black hover:text-[#00E676] transition-colors tracking-tighter">{children}</a>
+    <Link href={href} className="text-5xl font-black hover:text-[#00E676] transition-colors tracking-tighter">
+      {children}
     </Link>
   );
 }
@@ -176,8 +202,8 @@ function FooterColumn({ title, links }: { title: string; links: any[] }) {
       <ul className="space-y-4">
         {links.map((link) => (
           <li key={link.label}>
-            <Link href={link.href}>
-              <a className="text-sm font-bold text-white/50 hover:text-white transition-colors">{link.label}</a>
+            <Link href={link.href} className="text-sm font-bold text-white/50 hover:text-white transition-colors">
+              {link.label}
             </Link>
           </li>
         ))}

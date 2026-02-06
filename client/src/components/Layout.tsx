@@ -65,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-5">
-            <Link href="/login">
+            <a href="https://app.simple-bit.com">
               <Button 
                 variant="ghost" 
                 className={cn(
@@ -77,7 +77,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               >
                 Dashboard Login
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu */}
@@ -101,9 +101,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <MobileNavLink href="/partnerships">Partnerships</MobileNavLink>
                   </div>
                   <div className="h-px bg-white/10 my-4" />
-                  <Link href="/login" className="text-4xl font-black">
+                  <a href="https://app.simple-bit.com" className="text-4xl font-black text-white hover:text-primary transition-colors">
                     Login
-                  </Link>
+                  </a>
                   <Link href="/demo">
                     <GradientButton className="w-full py-8 text-xl rounded-2xl">Request Demo</GradientButton>
                   </Link>
@@ -124,7 +124,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-24">
             <div className="col-span-1 lg:col-span-2 space-y-8">
-              <Link href="/" className="text-3xl font-black tracking-tighter flex items-center gap-3">
+              <Link href="/" className="text-3xl font-black tracking-tighter flex items-center gap-3 text-white">
                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -143,17 +143,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             
-            <FooterColumn title="SimpleBit" links={[
-               { label: 'cShop (For Business)', href: '/cshop' },
-               { label: 'Business Dashboard', href: '/dashboard' },
-               { label: 'cShop Home', href: '/cshop-home' },
-               { label: 'eCart', href: '/ecart' }
+            <FooterColumn title="Features" links={[
+               { label: 'Capture', href: '/features/capture' },
+               { label: 'Accept', href: '/features/accept' },
+               { label: 'Sell', href: '/features/sell' },
+               { label: 'Track', href: '/features/track' }
             ]} />
 
             <FooterColumn title="Company" links={[
               { label: 'Who We Serve', href: '/who-we-serve' },
               { label: 'About us', href: '/about' },
-              { label: 'Our guidelines', href: '/guidelines' }
+              { label: 'Pricing', href: '/pricing' }
             ]} />
 
             <FooterColumn title="Hub" links={[

@@ -47,7 +47,7 @@ export default function Home() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="order-1 lg:order-2 relative"
             >
-               <div className="zbooni-shadow rounded-[3rem] overflow-hidden bg-white p-4 group">
+               <div className="simple-bit-shadow rounded-[3rem] overflow-hidden bg-white p-4 group">
                   <div className="aspect-[4/5] bg-gradient-to-br from-blue-400 to-purple-500 rounded-[2.5rem] relative overflow-hidden">
                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
@@ -226,7 +226,7 @@ export default function Home() {
                transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                className="relative group"
              >
-                <div className="bg-gray-50 rounded-[4rem] p-12 border border-gray-100 relative overflow-hidden zbooni-shadow">
+                <div className="bg-gray-50 rounded-[4rem] p-12 border border-gray-100 relative overflow-hidden simple-bit-shadow">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-3xl" />
                    <p className="font-black text-xl mb-10">Payments simplified.</p>
                    <div className="space-y-12">
@@ -271,7 +271,7 @@ export default function Home() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-1 relative group"
             >
-                <div className="zbooni-shadow rounded-[3rem] overflow-hidden bg-gray-900 border border-white/10 p-4">
+                <div className="simple-bit-shadow rounded-[3rem] overflow-hidden bg-gray-900 border border-white/10 p-4">
                   <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800" className="w-full aspect-square object-cover rounded-[2.5rem] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <motion.div 
@@ -342,7 +342,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Why SimpleBit Section - Redesigned */}
+      {/* Why SimpleBit Section - Professional Redesign */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +362,7 @@ export default function Home() {
               
               <div className="space-y-6 pt-8">
                 {[
-                  { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-[#00E676]" },
+                  { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-primary" },
                   { percent: 70, text: "of shoppers say they would only engage with personalized marketing messages.", color: "text-[#3B82F6]" },
                   { percent: 53, text: "of shoppers say they would rather buy from companies they can reach by chat.", color: "text-[#EAB308]" }
                 ].map((stat, i) => (
@@ -391,62 +391,104 @@ export default function Home() {
               <div className="bg-white/5 rounded-[3rem] p-10 border border-white/10 backdrop-blur-sm relative overflow-hidden">
                 <div className="flex flex-col gap-12">
                   <div className="flex items-end justify-between">
-                    <div className="space-y-4">
-                      <div className="w-40 h-40 relative flex items-center justify-center">
+                    <div className="space-y-4 text-center">
+                      <div className="w-40 h-40 mx-auto relative flex items-center justify-center">
                         <svg className="w-full h-full -rotate-90">
                           <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
-                          <circle cx="80" cy="80" r="72" fill="none" stroke="#00E676" strokeWidth="12" strokeLinecap="round" strokeDasharray="452.4" strokeDashoffset="9" />
+                          <circle cx="80" cy="80" r="72" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeLinecap="round" strokeDasharray="452.4" strokeDashoffset={452.4 * (1 - 0.98)} />
                         </svg>
                         <span className="absolute text-4xl font-black tracking-tighter">98%</span>
                       </div>
-                      <p className="font-black uppercase tracking-widest text-[10px] text-center text-[#00E676]">Messaging Open Rate</p>
+                      <p className="font-black uppercase tracking-widest text-[10px] text-primary">Messaging Open Rate</p>
                     </div>
                     
                     <div className="pb-12 text-2xl font-black text-gray-700 italic px-4">VS</div>
 
-                    <div className="space-y-4">
-                      <div className="w-32 h-32 relative flex items-center justify-center">
+                    <div className="space-y-4 text-center">
+                      <div className="w-32 h-32 mx-auto relative flex items-center justify-center">
                         <svg className="w-full h-full -rotate-90">
                           <circle cx="64" cy="64" r="58" fill="none" stroke="currentColor" strokeWidth="10" className="text-white/5" />
-                          <circle cx="64" cy="64" r="58" fill="none" stroke="#3B82F6" strokeWidth="10" strokeLinecap="round" strokeDasharray="364.4" strokeDashoffset="328" />
+                          <circle cx="64" cy="64" r="58" fill="none" stroke="#3B82F6" strokeWidth="10" strokeLinecap="round" strokeDasharray="364.4" strokeDashoffset={364.4 * (1 - 0.1)} />
                         </svg>
                         <span className="absolute text-2xl font-black tracking-tighter text-gray-400">10%</span>
                       </div>
-                      <p className="font-black uppercase tracking-widest text-[10px] text-center text-gray-500">Email Open Rate</p>
+                      <p className="font-black uppercase tracking-widest text-[10px] text-gray-500">Email Open Rate</p>
                     </div>
-                  </div>
-
-                  <div className="pt-10 border-t border-white/10 text-center">
-                    <p className="text-6xl font-black text-primary mb-2 tracking-tighter">4 hours</p>
-                    <p className="text-white/40 font-bold uppercase tracking-widest text-[10px] leading-relaxed">
-                      average daily time spent on social <br/>and messaging channels by shoppers.
-                    </p>
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#00E676]/10 rounded-full blur-3xl -z-10" />
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Move CTA Section logic (will be handled in next edit by rearranging) */}
+      {/* Success Stories Section */}
+      <section className="section-padding bg-gray-50 overflow-hidden">
+        <div className="container-wide">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="space-y-6">
+              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">See all <br/>success stories.</h2>
+              <p className="text-xl text-gray-500 font-medium max-w-sm">
+                Discover how businesses like yours are thriving with SimpleBit.
+              </p>
+            </div>
+            <Button variant="outline" className="rounded-full px-10 h-14 border-black font-black uppercase text-xs">View all stories</Button>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Personalizing the checkout experience for a global brand.",
+                category: "eCommerce",
+                img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=600"
+              },
+              {
+                title: "How chat commerce saved local retail during the shift.",
+                category: "Retail",
+                img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600"
+              },
+              {
+                title: "Scaling service business with automated invoicing.",
+                category: "Services",
+                img: "https://images.unsplash.com/photo-1521737706076-370c4084ae04?auto=format&fit=crop&q=80&w=600"
+              }
+            ].map((story, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="group cursor-pointer"
+              >
+                <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden mb-6 relative">
+                  <img src={story.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={story.title} />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{story.category}</p>
+                  <h3 className="text-2xl font-black tracking-tight leading-tight group-hover:text-primary transition-colors">{story.title}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CTA Banner - Enhanced with graphics and animations */}
+      {/* CTA Banner - Compact Height */}
       <motion.section 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="bg-white py-16"
+        className="bg-white py-12"
       >
         <div className="container-wide">
-          <div className="bg-black rounded-[3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden group">
-            {/* Animated Background Graphics */}
+          <div className="bg-black rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-blue-500/20 pointer-events-none" />
             <motion.div 
               animate={{ 
@@ -457,100 +499,13 @@ export default function Home() {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" 
             />
-            <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
-               {[...Array(10)].map((_, i) => (
-                 <div key={i} className="absolute h-px bg-white w-[200%] -left-1/2" style={{ top: `${i * 10}%`, transform: 'rotate(-5deg)' }} />
-               ))}
-            </div>
-
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-tight">Ready to grow <br/>your business?</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight">Ready to grow <br/>your business?</h2>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative z-10">
-              <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-xl font-black uppercase shadow-[0_0_50px_rgba(0,230,118,0.3)]">Request Demo</Button>
+              <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-14 text-lg font-black uppercase shadow-[0_0_50px_rgba(0,230,118,0.3)]">Request Demo</Button>
             </motion.div>
           </div>
-        </div>
-      </motion.section>
-
-      {/* Who We Serve Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="section-padding bg-white text-center relative overflow-hidden"
-      >
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-50 to-transparent" />
-        <div className="container-wide mb-20 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Who We Serve.</h2>
-            <p className="text-gray-500 max-w-3xl mx-auto text-xl font-medium leading-tight">From boutique designers to global enterprises, we empower every business to meet their customers where they spend their time.</p>
-          </motion.div>
-        </div>
-        
-        <div className="container-wide relative z-10">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {[
-              { 
-                title: 'Entrepreneurs', 
-                subtitle: 'Solo-sellers & Creators',
-                img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600', 
-                icon: Zap 
-              },
-              { 
-                title: 'Retailers', 
-                subtitle: 'Boutiques & Showrooms',
-                img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600', 
-                icon: ShoppingBag 
-              },
-              { 
-                title: 'Global Brands', 
-                subtitle: 'Scale & Enterprise',
-                img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200', 
-                icon: Globe 
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -10 }}
-                className="relative h-[500px] rounded-[4rem] overflow-hidden group cursor-pointer shadow-2xl shadow-black/5"
-              >
-                <img src={item.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-hover:via-black/10 transition-all duration-500" />
-                <div className="absolute inset-x-10 bottom-10 text-left">
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 rounded-[1.5rem] bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-6 text-white group-hover:bg-primary group-hover:border-transparent transition-all duration-500"
-                  >
-                    <item.icon className="w-7 h-7" />
-                  </motion.div>
-                  <h3 className="text-4xl font-black text-white mb-2 tracking-tight uppercase">{item.title}</h3>
-                  <p className="text-white/60 font-bold text-sm uppercase tracking-widest">{item.subtitle}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Button className="bg-black text-white hover:bg-black/90 px-12 h-16 text-lg font-bold shadow-2xl">
-              See all success stories
-            </Button>
-          </motion.div>
         </div>
       </motion.section>
     </Layout>

@@ -1,81 +1,68 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const blogs = [
   {
-    title: "The MENA eCommerce Report 2024",
-    date: "January 20, 2024",
-    description: "Discover the latest trends and insights into the growing eCommerce landscape in the MENA region.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    buttonText: "Read Report"
-  },
-  {
-    title: "The MENA eCommerce Report 2023",
-    date: "February 5, 2023",
-    description: "A comprehensive look back at the eCommerce growth and patterns throughout 2023.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-    buttonText: "Read Report"
-  },
-  {
-    title: "Say Hello to Collections: A Powerful Marketing Tool",
-    date: "February 5, 2024",
-    description: "Learn how to use Collections to showcase your products and drive more sales.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-    buttonText: "Learn More"
-  },
-  {
-    title: "How cCart is Different and Why it is Better",
-    date: "February 12, 2024",
-    description: "Exploring the unique features of cCart and how it simplifies the checkout experience.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-    buttonText: "Learn More"
-  },
-  {
-    title: "Conversion Success: Cultivating Personal Customer Relationships via cCart",
-    date: "March 15, 2024",
-    description: "How to build lasting relationships with your customers through personalized checkout experiences.",
+    title: "The Future of Personalized Commerce",
+    description: "Discover how businesses are leveraging chat-based commerce to create more meaningful connections with their customers and drive higher conversion rates.",
     image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800",
-    buttonText: "Learn More"
+    category: "Insights",
+    date: "Feb 05, 2026"
+  },
+  {
+    title: "Mastering the Art of Social Selling",
+    description: "Learn the top strategies for converting your social media followers into loyal customers using integrated checkout links and seamless payment processing.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    category: "Strategy",
+    date: "Jan 28, 2026"
   }
 ];
 
 export default function Blogs() {
   return (
     <Layout>
-      <div className="bg-black pt-32 pb-48">
+      <div className="bg-black pt-40 pb-56">
         <div className="container-wide">
-          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter -mt-4">Blogs</h1>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter text-center uppercase">Our Blog</h1>
+          <p className="text-white/60 text-center mt-6 text-xl max-w-2xl mx-auto font-medium">
+            Stories, insights, and strategies to help you grow your business in the age of personalized commerce.
+          </p>
         </div>
       </div>
-      
-      <div className="bg-[#f8f9fa] pb-20 -mt-32">
-        <div className="container-wide">
-          <div className="flex flex-col gap-8 max-w-6xl mx-auto relative z-10">
-            {blogs.map((blog, index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl bg-white">
-                <div className="flex flex-col md:flex-row items-stretch">
-                  <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h2 className="text-3xl font-black mb-4 tracking-tight">{blog.title}</h2>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-6 font-bold uppercase tracking-widest">
-                      <span>BY SIMPLEBIT</span>
-                      <span>•</span>
-                      <span>{blog.date}</span>
-                    </div>
-                    <p className="text-gray-600 mb-8 text-lg leading-relaxed line-clamp-3 font-medium">
-                      {blog.description}
-                    </p>
-                    <Button variant="outline" className="w-fit rounded-full px-8 h-12 font-bold text-sm uppercase tracking-widest border-2 hover:bg-black hover:text-white transition-all">
-                      {blog.buttonText}
-                    </Button>
-                  </div>
-                  <div className="md:w-2/5 aspect-video md:aspect-auto min-h-[300px]">
-                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
-                  </div>
+
+      <div className="container-wide pb-24 -mt-40 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {blogs.map((blog, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 rounded-[2.5rem] bg-white group">
+                <div className="aspect-video overflow-hidden">
+                  <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
+                <CardContent className="p-8 md:p-12">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-[10px] font-black text-primary uppercase tracking-widest">{blog.category}</span>
+                    <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{blog.date}</span>
+                  </div>
+                  <h2 className="text-3xl font-black mb-6 tracking-tight group-hover:text-primary transition-colors">{blog.title}</h2>
+                  <p className="text-gray-500 mb-8 text-lg leading-relaxed font-medium">
+                    {blog.description}
+                  </p>
+                  <Button variant="ghost" className="p-0 font-black text-sm uppercase tracking-widest hover:bg-transparent hover:text-primary transition-colors">
+                    Read Story →
+                  </Button>
+                </CardContent>
               </Card>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </Layout>

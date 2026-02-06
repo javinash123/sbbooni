@@ -10,7 +10,7 @@ const partners = [
   },
   {
     title: "Meydan Free Zone Partnership",
-    description: "Zbooni has partnered with Meydan Free Zone to make it easier for you to renew or get a new business license. Meydan Free Zone allows you to design the license that fits your business needs and it's 100% digital. You can do it all online and hassle-free!",
+    description: "SimpleBit has partnered with Meydan Free Zone to make it easier for you to renew or get a new business license. Meydan Free Zone allows you to design the license that fits your business needs and it's 100% digital. You can do it all online and hassle-free!",
     logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400"
   }
 ];
@@ -18,13 +18,13 @@ const partners = [
 export default function Partnerships() {
   return (
     <Layout>
-      <div className="bg-black pt-32 pb-48">
+      <div className="bg-black pt-40 pb-56">
         <div className="container-wide">
           <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter -mt-4">Partnerships</h1>
         </div>
       </div>
 
-      <div className="bg-[#f8f9fa] pb-20 -mt-32">
+      <div className="bg-[#f8f9fa] pb-20 -mt-40">
         <div className="container-wide">
           <div className="flex flex-col gap-8 max-w-6xl mx-auto relative z-10">
             {partners.map((partner, index) => (

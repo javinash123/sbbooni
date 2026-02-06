@@ -11,7 +11,7 @@ const plans = [
     price: "Free",
     setup: "(no setup and monthly fees)",
     features: [
-      "Store listing on Zbooni Marketplace",
+      "Store listing on SimpleBit Marketplace",
       "Industry leading acceptance rates",
       "Security & fraud protection",
       "Payouts on demand",

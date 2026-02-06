@@ -10,6 +10,10 @@ import Capture from "@/pages/Capture";
 import AboutUs from "@/pages/AboutUs";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
+import KnowledgeBase from "@/pages/KnowledgeBase";
+import Blogs from "@/pages/Blogs";
+import Partnerships from "@/pages/Partnerships";
+import CaseStudies from "@/pages/CaseStudies";
 import NotFound from "@/pages/not-found";
 import Layout from "@/components/Layout";
 
@@ -36,6 +40,10 @@ function Router() {
       <Route path="/about" component={AboutUs} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/knowledge-base" component={KnowledgeBase} />
+      <Route path="/blogs" component={Blogs} />
+      <Route path="/partnerships" component={Partnerships} />
+      <Route path="/case-studies" component={CaseStudies} />
       <Route path="/features" component={() => <PlaceholderPage title="Features" />} />
       <Route component={NotFound} />
     </Switch>

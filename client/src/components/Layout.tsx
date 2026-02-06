@@ -54,10 +54,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <NavDropdown 
                 label="Simple Hub" 
                 links={[
-                  { label: "Knowledgebase", href: "/hub/knowledgebase" },
-                  { label: "Blogs", href: "/hub/blogs" },
-                  { label: "Case Studies", href: "/hub/case-studies" },
-                  { label: "Partnership", href: "/hub/partnership" },
+                  { label: "Knowledge Base", href: "/knowledge-base" },
+                  { label: "Blogs", href: "/blogs" },
+                  { label: "Case Studies", href: "/case-studies" },
+                  { label: "Partnerships", href: "/partnerships" },
                 ]} 
               />
             </nav>
@@ -93,7 +93,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <MobileNavLink href="/features">Features</MobileNavLink>
                   <MobileNavLink href="/who-we-serve">Who We Serve</MobileNavLink>
                   <MobileNavLink href="/pricing">Pricing</MobileNavLink>
-                  <MobileNavLink href="/hub">Simple Hub</MobileNavLink>
+                  <div className="flex flex-col gap-4">
+                    <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Simple Hub</span>
+                    <MobileNavLink href="/knowledge-base">Knowledge Base</MobileNavLink>
+                    <MobileNavLink href="/blogs">Blogs</MobileNavLink>
+                    <MobileNavLink href="/case-studies">Case Studies</MobileNavLink>
+                    <MobileNavLink href="/partnerships">Partnerships</MobileNavLink>
+                  </div>
                   <div className="h-px bg-white/10 my-4" />
                   <Link href="/login" className="text-4xl font-black">
                     Login
@@ -151,10 +157,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ]} />
 
             <FooterColumn title="Hub" links={[
-              { label: 'Knowledge Base', href: '/hub/knowledgebase' },
-              { label: 'Blogs', href: '/hub/blogs' },
-              { label: 'Partnerships', href: '/hub/partnership' },
-               { label: 'Case Studies', href: '/hub/case-studies' }
+              { label: 'Knowledge Base', href: '/knowledge-base' },
+              { label: 'Blogs', href: '/blogs' },
+              { label: 'Partnerships', href: '/partnerships' },
+              { label: 'Case Studies', href: '/case-studies' }
             ]} />
           </div>
 

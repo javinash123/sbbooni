@@ -342,76 +342,99 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Feature 5: Why SimpleBit Section (Restored with stats) */}
+      {/* Why SimpleBit Section - Redesigned */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="section-padding bg-[#0F172A] text-white overflow-hidden relative"
+        className="section-padding bg-slate-950 text-white overflow-hidden relative"
       >
         <div className="container-wide relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">Why SimpleBit?</h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Left side: Main Stats */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
-              <div className="text-center space-y-4">
-                <div className="relative w-48 h-48 flex items-center justify-center">
-                  <svg className="w-full h-full -rotate-90">
-                    <circle cx="96" cy="96" r="88" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
-                    <circle cx="96" cy="96" r="88" fill="none" stroke="#00E676" strokeWidth="12" strokeDasharray="552.92" strokeDashoffset="11.05" strokeLinecap="round" />
-                  </svg>
-                  <span className="absolute text-5xl font-black tracking-tighter">98%</span>
-                </div>
-                <p className="font-black uppercase tracking-widest text-xs">Messaging <br/>Open Rate</p>
-              </div>
-
-              <div className="text-3xl font-black text-gray-500 italic">vs</div>
-
-              <div className="text-center space-y-4">
-                <div className="relative w-48 h-48 flex items-center justify-center">
-                  <svg className="w-full h-full -rotate-90">
-                    <circle cx="96" cy="96" r="88" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
-                    <circle cx="96" cy="96" r="88" fill="none" stroke="#3B82F6" strokeWidth="12" strokeDasharray="552.92" strokeDashoffset="497.63" strokeLinecap="round" />
-                  </svg>
-                  <span className="absolute text-5xl font-black tracking-tighter text-gray-400">10%</span>
-                </div>
-                <p className="font-black uppercase tracking-widest text-xs text-gray-400">Email <br/>Open Rate</p>
-              </div>
-            </div>
-
-            {/* Right side: Secondary Stats */}
-            <div className="space-y-12">
-               {[
-                 { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-[#00E676]" },
-                 { percent: 70, text: "of shoppers say they would only engage with personalized marketing messages.", color: "text-[#3B82F6]" },
-                 { percent: 53, text: "of shoppers say they would rather buy from companies they can reach by chat.", color: "text-[#EAB308]" }
-               ].map((stat, i) => (
-                 <div key={i} className="flex items-center gap-8">
-                    <div className="relative w-24 h-24 flex-shrink-0 flex items-center justify-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
+                Why <br/><span className="text-primary">SimpleBit?</span>
+              </h2>
+              <p className="text-xl text-gray-400 font-medium max-w-md leading-tight">
+                Traditional commerce is broken. We're building the infrastructure for how people actually want to shop today.
+              </p>
+              
+              <div className="space-y-6 pt-8">
+                {[
+                  { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-[#00E676]" },
+                  { percent: 70, text: "of shoppers say they would only engage with personalized marketing messages.", color: "text-[#3B82F6]" },
+                  { percent: 53, text: "of shoppers say they would rather buy from companies they can reach by chat.", color: "text-[#EAB308]" }
+                ].map((stat, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center gap-6 group"
+                  >
+                    <div className="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
                       <svg className="w-full h-full -rotate-90">
-                        <circle cx="48" cy="48" r="42" fill="none" stroke="currentColor" strokeWidth="6" className="text-white/5" />
-                        <circle cx="48" cy="48" r="42" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="263.89" strokeDashoffset={263.89 * (1 - stat.percent/100)} strokeLinecap="round" className={stat.color} />
+                        <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" className="text-white/5" />
+                        <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeDasharray="175.9" strokeDashoffset={175.9 * (1 - stat.percent/100)} className={stat.color} />
                       </svg>
-                      <span className="absolute text-xl font-black tracking-tighter">{stat.percent}%</span>
+                      <span className="absolute text-sm font-black tracking-tighter">{stat.percent}%</span>
                     </div>
-                    <p className="text-white/60 font-medium text-lg leading-tight">{stat.text}</p>
-                 </div>
-               ))}
+                    <p className="text-white/70 font-medium text-base leading-snug group-hover:text-white transition-colors">{stat.text}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="mt-24 text-center">
-             <div className="inline-block">
-                <p className="text-5xl md:text-7xl font-black text-primary mb-4 tracking-tighter">4 hours</p>
-                <p className="text-white/40 font-bold uppercase tracking-widest text-sm">is the average daily time spent <br/>on social and messaging <br/>channels by shoppers.</p>
-             </div>
+            <div className="relative">
+              <div className="bg-white/5 rounded-[3rem] p-10 border border-white/10 backdrop-blur-sm relative overflow-hidden">
+                <div className="flex flex-col gap-12">
+                  <div className="flex items-end justify-between">
+                    <div className="space-y-4">
+                      <div className="w-40 h-40 relative flex items-center justify-center">
+                        <svg className="w-full h-full -rotate-90">
+                          <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
+                          <circle cx="80" cy="80" r="72" fill="none" stroke="#00E676" strokeWidth="12" strokeLinecap="round" strokeDasharray="452.4" strokeDashoffset="9" />
+                        </svg>
+                        <span className="absolute text-4xl font-black tracking-tighter">98%</span>
+                      </div>
+                      <p className="font-black uppercase tracking-widest text-[10px] text-center text-[#00E676]">Messaging Open Rate</p>
+                    </div>
+                    
+                    <div className="pb-12 text-2xl font-black text-gray-700 italic px-4">VS</div>
+
+                    <div className="space-y-4">
+                      <div className="w-32 h-32 relative flex items-center justify-center">
+                        <svg className="w-full h-full -rotate-90">
+                          <circle cx="64" cy="64" r="58" fill="none" stroke="currentColor" strokeWidth="10" className="text-white/5" />
+                          <circle cx="64" cy="64" r="58" fill="none" stroke="#3B82F6" strokeWidth="10" strokeLinecap="round" strokeDasharray="364.4" strokeDashoffset="328" />
+                        </svg>
+                        <span className="absolute text-2xl font-black tracking-tighter text-gray-400">10%</span>
+                      </div>
+                      <p className="font-black uppercase tracking-widest text-[10px] text-center text-gray-500">Email Open Rate</p>
+                    </div>
+                  </div>
+
+                  <div className="pt-10 border-t border-white/10 text-center">
+                    <p className="text-6xl font-black text-primary mb-2 tracking-tighter">4 hours</p>
+                    <p className="text-white/40 font-bold uppercase tracking-widest text-[10px] leading-relaxed">
+                      average daily time spent on social <br/>and messaging channels by shoppers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#00E676]/10 rounded-full blur-3xl -z-10" />
+            </div>
           </div>
         </div>
       </motion.section>
+
+      {/* Move CTA Section logic (will be handled in next edit by rearranging) */}
+
 
       {/* CTA Banner - Enhanced with graphics and animations */}
       <motion.section 

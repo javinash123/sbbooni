@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, Zap, Globe, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -341,34 +342,110 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* CTA Banner - Styled with gradient and graphic elements */}
+      {/* Feature 5: Why SimpleBit Section (Restored with stats) */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white py-24"
+        className="section-padding bg-[#0F172A] text-white overflow-hidden relative"
+      >
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">Why SimpleBit?</h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left side: Main Stats */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+              <div className="text-center space-y-4">
+                <div className="relative w-48 h-48 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90">
+                    <circle cx="96" cy="96" r="88" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
+                    <circle cx="96" cy="96" r="88" fill="none" stroke="#00E676" strokeWidth="12" strokeDasharray="552.92" strokeDashoffset="11.05" strokeLinecap="round" />
+                  </svg>
+                  <span className="absolute text-5xl font-black tracking-tighter">98%</span>
+                </div>
+                <p className="font-black uppercase tracking-widest text-xs">Messaging <br/>Open Rate</p>
+              </div>
+
+              <div className="text-3xl font-black text-gray-500 italic">vs</div>
+
+              <div className="text-center space-y-4">
+                <div className="relative w-48 h-48 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90">
+                    <circle cx="96" cy="96" r="88" fill="none" stroke="currentColor" strokeWidth="12" className="text-white/5" />
+                    <circle cx="96" cy="96" r="88" fill="none" stroke="#3B82F6" strokeWidth="12" strokeDasharray="552.92" strokeDashoffset="497.63" strokeLinecap="round" />
+                  </svg>
+                  <span className="absolute text-5xl font-black tracking-tighter text-gray-400">10%</span>
+                </div>
+                <p className="font-black uppercase tracking-widest text-xs text-gray-400">Email <br/>Open Rate</p>
+              </div>
+            </div>
+
+            {/* Right side: Secondary Stats */}
+            <div className="space-y-12">
+               {[
+                 { percent: 87, text: "of shoppers believe social channels help them make a shopping decision.", color: "text-[#00E676]" },
+                 { percent: 70, text: "of shoppers say they would only engage with personalized marketing messages.", color: "text-[#3B82F6]" },
+                 { percent: 53, text: "of shoppers say they would rather buy from companies they can reach by chat.", color: "text-[#EAB308]" }
+               ].map((stat, i) => (
+                 <div key={i} className="flex items-center gap-8">
+                    <div className="relative w-24 h-24 flex-shrink-0 flex items-center justify-center">
+                      <svg className="w-full h-full -rotate-90">
+                        <circle cx="48" cy="48" r="42" fill="none" stroke="currentColor" strokeWidth="6" className="text-white/5" />
+                        <circle cx="48" cy="48" r="42" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="263.89" strokeDashoffset={263.89 * (1 - stat.percent/100)} strokeLinecap="round" className={stat.color} />
+                      </svg>
+                      <span className="absolute text-xl font-black tracking-tighter">{stat.percent}%</span>
+                    </div>
+                    <p className="text-white/60 font-medium text-lg leading-tight">{stat.text}</p>
+                 </div>
+               ))}
+            </div>
+          </div>
+
+          <div className="mt-24 text-center">
+             <div className="inline-block">
+                <p className="text-5xl md:text-7xl font-black text-primary mb-4 tracking-tighter">4 hours</p>
+                <p className="text-white/40 font-bold uppercase tracking-widest text-sm">is the average daily time spent <br/>on social and messaging <br/>channels by shoppers.</p>
+             </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* CTA Banner - Enhanced with graphics and animations */}
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="bg-white py-16"
       >
         <div className="container-wide">
-          <div className="relative overflow-hidden rounded-[3rem] bg-black p-12 md:p-20 group">
-             {/* Dynamic background elements */}
-             <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
-             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/30 rounded-full blur-[100px] group-hover:bg-primary/40 transition-colors duration-700" />
-             <div className="absolute top-10 right-10 flex gap-4 opacity-20 group-hover:opacity-30 transition-opacity">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-px h-64 bg-white transform rotate-45" />
-                ))}
-             </div>
+          <div className="bg-black rounded-[3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden group">
+            {/* Animated Background Graphics */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-blue-500/20 pointer-events-none" />
+            <motion.div 
+              animate={{ 
+                scale: [1, 1.2, 1],
+                rotate: [0, 90, 0],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" 
+            />
+            <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
+               {[...Array(10)].map((_, i) => (
+                 <div key={i} className="absolute h-px bg-white w-[200%] -left-1/2" style={{ top: `${i * 10}%`, transform: 'rotate(-5deg)' }} />
+               ))}
+            </div>
 
-             <div className="relative z-10 max-w-2xl">
-                <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">Ready to grow <br/>your business?</h2>
-                <div className="flex flex-wrap gap-6 items-center">
-                   <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 px-12 h-16 text-lg font-bold rounded-2xl">
-                      Request Demo
-                   </Button>
-                   <p className="text-white/50 font-bold uppercase tracking-widest text-xs">Join 10,000+ businesses <br/>already scaling with SimpleBit</p>
-                </div>
-             </div>
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-tight">Ready to grow <br/>your business?</h2>
+            </div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative z-10">
+              <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-xl font-black uppercase shadow-[0_0_50px_rgba(0,230,118,0.3)]">Request Demo</Button>
+            </motion.div>
           </div>
         </div>
       </motion.section>

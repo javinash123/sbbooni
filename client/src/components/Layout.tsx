@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <NavDropdown 
                 label="Features" 
                 links={[
-                  { label: "Capture", href: "#capture" },
+                  { label: "Capture", href: "/features/capture" },
                   { label: "Accept", href: "#accept" },
                   { label: "Sell", href: "#sell" },
                   { label: "Track", href: "#track" },
@@ -69,7 +69,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Button 
                 variant="ghost" 
                 className={cn(
-                  "h-10 px-6 font-bold text-[10px] uppercase tracking-widest transition-all duration-300",
+                  "h-10 px-6 font-bold text-xs uppercase tracking-widest transition-all duration-300",
                   scrolled 
                     ? "bg-primary text-white hover:bg-primary/90 rounded-lg" 
                     : "text-white hover:text-white/80 hover:bg-transparent"

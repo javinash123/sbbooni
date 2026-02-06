@@ -102,8 +102,8 @@ export default function WhoWeServe() {
                    whileHover={{ y: -5 }}
                    className="bg-white rounded-3xl overflow-hidden shadow-sm"
                  >
-                    <div className="aspect-video bg-gray-200">
-                       <img src={`https://images.unsplash.com/photo-${1550000000000 + i}?auto=format&fit=crop&q=80&w=400`} className="w-full h-full object-cover" />
+                    <div className="aspect-square bg-gray-200">
+                       <img src={`https://images.unsplash.com/photo-${1550000000000 + (i * 100000)}?auto=format&fit=crop&q=80&w=400`} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-4 text-left">
                        <p className="text-[8px] font-black text-primary uppercase tracking-widest mb-1">eCommerce</p>
@@ -118,16 +118,35 @@ export default function WhoWeServe() {
          </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-white py-24">
+      {/* CTA Banner - Enhanced with graphics */}
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="bg-white py-16"
+      >
         <div className="container-wide">
-          <div className="bg-black rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />
-             <h2 className="text-4xl md:text-6xl font-black text-white relative z-10 tracking-tighter uppercase">Tap into <br/>eCommerce</h2>
-             <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-lg font-black uppercase relative z-10">Request Demo</Button>
+          <div className="bg-black rounded-[3rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-blue-500/20 pointer-events-none" />
+            <motion.div 
+              animate={{ 
+                scale: [1, 1.2, 1],
+                rotate: [0, 90, 0],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" 
+            />
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-tight">Ready to grow <br/>your business?</h2>
+            </div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative z-10">
+              <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-xl font-black uppercase shadow-[0_0_50px_rgba(0,230,118,0.3)]">Request Demo</Button>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 }

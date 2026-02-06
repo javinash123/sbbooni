@@ -1,75 +1,173 @@
 import Layout from "@/components/Layout";
-import { Check, Zap, ShoppingBag, Globe, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Zap, ShoppingBag, CreditCard, Globe, Users, Heart, ArrowRight } from "lucide-react";
 
 export default function WhoWeServe() {
   return (
     <Layout>
-      <div className="pt-32 pb-20 bg-white">
-        <div className="container-wide text-center space-y-8">
+      {/* Hero Section */}
+      <div className="bg-black text-white pt-40 pb-24">
+        <div className="container-wide text-center">
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-black tracking-tighter uppercase"
-          >
-            Who we serve
-          </motion.h1>
-          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-xl text-gray-500 max-w-2xl mx-auto font-medium"
+            className="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase"
           >
-            Zbooni powers businesses of all sizes, from solo entrepreneurs to global enterprises.
-          </motion.p>
-        </div>
+            Thousands of businesses sell more with SimpleBit.
+          </motion.h1>
 
-        <section className="py-24">
-          <div className="container-wide grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Entrepreneurs",
-                desc: "Solo-sellers and creators looking to professionalize their sales.",
-                icon: Zap,
-                img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
-              },
-              {
-                title: "Retailers",
-                desc: "Boutiques and showrooms bringing their in-store experience online.",
-                icon: ShoppingBag,
-                img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
-              },
-              {
-                title: "Global Brands",
-                desc: "Enterprise businesses scaling their reach across borders.",
-                icon: Globe,
-                img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 + (i * 0.1), ease: "easeOut" }}
-                className="group relative h-[600px] rounded-[3rem] overflow-hidden"
-              >
-                <img src={item.img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute inset-x-10 bottom-10 space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <h2 className="text-4xl font-black text-white uppercase tracking-tighter">{item.title}</h2>
-                  <p className="text-white/70 font-medium">{item.desc}</p>
+          <div className="grid md:grid-cols-2 gap-12 mt-20 max-w-4xl mx-auto">
+             <div className="space-y-6">
+                <div className="aspect-square w-48 mx-auto relative">
+                   <div className="absolute inset-0 border-[12px] border-white/5 rounded-full" />
+                   <div className="absolute inset-0 border-[12px] border-primary border-t-transparent border-r-transparent rounded-full rotate-45" />
+                   <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="font-black text-sm">By</span>
+                      <span className="font-black text-sm uppercase">Industry</span>
+                   </div>
                 </div>
-              </motion.div>
-            ))}
+                <ul className="text-left space-y-2 text-sm font-bold text-white/60">
+                   <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-primary" /> eCommerce</li>
+                   <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-blue-400" /> Professional Services</li>
+                   <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-yellow-400" /> Food & Beverage</li>
+                </ul>
+             </div>
+             <div className="space-y-6">
+                <div className="aspect-square w-48 mx-auto relative">
+                   <div className="absolute inset-0 border-[12px] border-white/5 rounded-full" />
+                   <div className="absolute inset-0 border-[12px] border-primary border-b-transparent rounded-full -rotate-12" />
+                   <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="font-black text-sm">Type</span>
+                      <span className="font-black text-sm uppercase">Business</span>
+                   </div>
+                </div>
+                <ul className="text-left space-y-2 text-sm font-bold text-white/60">
+                   <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-yellow-400" /> Product</li>
+                   <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-primary" /> Service</li>
+                </ul>
+             </div>
           </div>
-        </section>
+        </div>
       </div>
+
+      {/* Main Cards */}
+      <section className="bg-white py-24">
+        <div className="container-wide grid md:grid-cols-2 gap-8">
+          <Card 
+            title="Starter"
+            subtitle="Get a head start."
+            desc="If you're just getting started, or still in the early phase, you have plenty to worry about. Establishing an online presence, choosing the right products to sell, and sorting out accept payments. It's hard. It's technical. It's overwhelming. It doesn't have to be."
+            quote="Our mission is to remove the headaches so you can focus on what you do best."
+            features={[
+              { label: "Start selling online.", icon: ShoppingBag },
+              { label: "Access resources to power your business.", icon: Zap },
+              { label: "Accept payments.", icon: CreditCard }
+            ]}
+            img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+          />
+          <Card 
+            title="Power"
+            subtitle="Take your business to the next level."
+            desc="Already selling with eCommerce, or have a retail presence? Complement your existing operation with a new channel to drive more sales and make the most of what you have going."
+            quote="Meet your customers on their favorite messaging and social apps, generate new business and convert more sales with eCommerce."
+            features={[
+              { label: "Accept payments in new ways.", icon: CreditCard },
+              { label: "Empower your salespeople.", icon: Users },
+              { label: "Retain your customers for life.", icon: Heart }
+            ]}
+            img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+            variant="dark"
+          />
+        </div>
+      </section>
+
+      {/* Case Studies / Grid */}
+      <section className="bg-gray-50 py-24">
+         <div className="container-wide text-center">
+            <h2 className="text-4xl md:text-5xl font-black mb-16 tracking-tighter">See how eCommerce is enabling <br/>businesses like yours.</h2>
+            
+            <div className="flex gap-4 mb-16 overflow-x-auto pb-4 justify-center no-scrollbar">
+               {["All", "Sports & Fitness", "Professional Services", "Food & Beverage", "eCommerce"].map((cat, i) => (
+                 <button key={cat} className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${i === 0 ? 'bg-black text-white' : 'bg-white text-gray-400 hover:bg-gray-100'}`}>
+                   {cat}
+                 </button>
+               ))}
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+               {[...Array(8)].map((_, i) => (
+                 <motion.div 
+                   key={i}
+                   whileHover={{ y: -5 }}
+                   className="bg-white rounded-3xl overflow-hidden shadow-sm"
+                 >
+                    <div className="aspect-video bg-gray-200">
+                       <img src={`https://images.unsplash.com/photo-${1550000000000 + i}?auto=format&fit=crop&q=80&w=400`} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-4 text-left">
+                       <p className="text-[8px] font-black text-primary uppercase tracking-widest mb-1">eCommerce</p>
+                       <h4 className="font-black text-sm">Business Name</h4>
+                       <p className="text-[10px] text-gray-400 font-bold">Dubai, UAE</p>
+                    </div>
+                 </motion.div>
+               ))}
+            </div>
+
+            <Button variant="outline" className="mt-16 rounded-full px-12 h-14 border-black font-black uppercase text-xs">Load More</Button>
+         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-white py-24">
+        <div className="container-wide">
+          <div className="bg-black rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />
+             <h2 className="text-4xl md:text-6xl font-black text-white relative z-10 tracking-tighter uppercase">Tap into <br/>eCommerce</h2>
+             <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-lg font-black uppercase relative z-10">Request Demo</Button>
+          </div>
+        </div>
+      </section>
     </Layout>
+  );
+}
+
+function Card({ title, subtitle, desc, quote, features, img, variant = "light" }: any) {
+  return (
+    <div className={`rounded-[3rem] p-10 flex flex-col gap-8 shadow-xl border ${variant === 'dark' ? 'bg-white border-gray-100' : 'bg-white border-gray-100'}`}>
+      <div className="space-y-2">
+         <h2 className="text-4xl font-black tracking-tighter uppercase">{title}</h2>
+         <p className="font-bold text-gray-400">{subtitle}</p>
+      </div>
+
+      <div className="aspect-[16/10] rounded-[2.5rem] overflow-hidden bg-gray-100">
+         <img src={img} className="w-full h-full object-cover" />
+      </div>
+
+      <p className="text-gray-500 font-medium leading-relaxed">{desc}</p>
+      
+      <div className="pl-6 border-l-4 border-primary/20 italic text-sm font-medium text-gray-600">
+         {quote}
+      </div>
+
+      <div className="pt-8 border-t border-gray-100">
+         <p className="text-[10px] font-black uppercase tracking-widest text-center mb-8">Get started in minutes</p>
+         <div className="grid grid-cols-3 gap-4">
+            {features.map((f: any, i: number) => (
+              <div key={i} className="text-center space-y-4">
+                 <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto">
+                    <f.icon className="w-5 h-5" />
+                 </div>
+                 <p className="text-[8px] font-bold text-gray-400 uppercase leading-tight tracking-widest">{f.label}</p>
+              </div>
+            ))}
+         </div>
+      </div>
+
+      <div className="flex gap-4">
+         <Button className="flex-1 bg-black text-white rounded-2xl h-14 font-black">Download</Button>
+         <Button className="flex-1 bg-primary text-white rounded-2xl h-14 font-black">Learn More</Button>
+      </div>
+    </div>
   );
 }

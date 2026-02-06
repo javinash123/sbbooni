@@ -1,11 +1,8 @@
 import Layout from "@/components/Layout";
 import { Hero } from "@/components/Hero";
-import { GradientButton } from "@/components/ui/gradient-button";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, ArrowRight, Zap, Shield, Globe, Smartphone, Store, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, Zap, Globe, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -344,7 +341,39 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Who We Serve Improved */}
+      {/* CTA Banner - Styled with gradient and graphic elements */}
+      <motion.section 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="bg-white py-24"
+      >
+        <div className="container-wide">
+          <div className="relative overflow-hidden rounded-[3rem] bg-black p-12 md:p-20 group">
+             {/* Dynamic background elements */}
+             <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
+             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/30 rounded-full blur-[100px] group-hover:bg-primary/40 transition-colors duration-700" />
+             <div className="absolute top-10 right-10 flex gap-4 opacity-20 group-hover:opacity-30 transition-opacity">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-px h-64 bg-white transform rotate-45" />
+                ))}
+             </div>
+
+             <div className="relative z-10 max-w-2xl">
+                <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">Ready to grow <br/>your business?</h2>
+                <div className="flex flex-wrap gap-6 items-center">
+                   <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 px-12 h-16 text-lg font-bold rounded-2xl">
+                      Request Demo
+                   </Button>
+                   <p className="text-white/50 font-bold uppercase tracking-widest text-xs">Join 10,000+ businesses <br/>already scaling with SimpleBit</p>
+                </div>
+             </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Who We Serve Section */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -424,120 +453,6 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* CTA Banner - Moved below Why SimpleBit and styled as horizontal rectangle */}
-      <motion.section 
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white py-20"
-      >
-        <div className="container-wide">
-          <div className="bg-black rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-tight relative z-10 text-center md:text-left"
-            >
-              Ready to grow <br className="hidden md:block" />your business?
-            </motion.h2>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col sm:flex-row gap-4 relative z-10"
-            >
-              <Button className="bg-white text-black hover:bg-white/90 px-10 h-14 text-sm font-bold rounded-xl">
-                Download App
-              </Button>
-              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-14 text-sm font-bold rounded-xl">
-                Request Demo
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Why SimpleBit? Improved */}
-      <motion.section 
-        id="why" 
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="section-padding bg-black text-white relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00E676]/5 blur-[150px] rounded-full pointer-events-none" />
-        
-        <div className="container-wide text-center mb-24 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter leading-[1.1]">Why SimpleBit?</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-xl leading-snug">We're bridging the gap between social interaction and commerce, enabling businesses to thrive where conversations happen.</p>
-          </motion.div>
-        </div>
-        
-        <div className="container-wide grid lg:grid-cols-3 gap-8 relative z-10">
-          {[
-            { label: 'Messaging Open Rate', value: '98%', desc: 'Compared to just 15% for traditional email marketing. Reach customers where they are already active.', color: 'primary' },
-            { label: 'Sales Increase', value: '87%', desc: 'Merchants see a massive jump in conversion when switching to personalized chat-based commerce.', color: 'accent' },
-            { label: 'Global Reach', value: '22+', desc: 'Support for businesses across multiple countries and currencies with seamless localized payments.', color: 'white' }
-          ].map((stat, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4 + (i * 0.15), ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -10, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
-              className="p-10 rounded-[3.5rem] bg-white/5 border border-white/10 transition-all duration-500 group"
-            >
-              <p className={`text-6xl md:text-8xl font-black mb-8 transition-transform duration-500 group-hover:scale-110 ${stat.color === 'primary' ? 'text-primary' : stat.color === 'accent' ? 'text-[#00E676]' : 'text-white'}`}>
-                {stat.value}
-              </p>
-              <h4 className="text-2xl font-black mb-4 tracking-tight">{stat.label}</h4>
-              <p className="text-gray-500 text-base leading-relaxed font-medium">{stat.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="container-wide mt-24 pt-24 border-t border-white/10 relative z-10"
-        >
-           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
-              <StatItem label="Response Time" value="4h" subValue="Merchant Avg" />
-              <StatItem label="Customer Loyalty" value="70%" subValue="Repeat Purchase" />
-              <StatItem label="Checkout Speed" value="2x" subValue="Faster Sales" />
-              <StatItem label="Merchant Trust" value="50k+" subValue="Global Users" />
-           </div>
-        </motion.div>
-      </motion.section>
     </Layout>
-  );
-}
-
-function StatItem({ label, value, subValue }: { label: string; value: string; subValue?: string }) {
-  return (
-    <div className="space-y-1">
-      <p className="text-5xl font-black text-white group-hover:text-primary transition-colors">{value}</p>
-      <div className="space-y-0">
-        <p className="text-white font-bold text-xs uppercase tracking-widest">{label}</p>
-        {subValue && <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">{subValue}</p>}
-      </div>
-    </div>
   );
 }

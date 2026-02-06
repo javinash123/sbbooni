@@ -66,7 +66,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-5">
             <Link href="/login">
-              <Button variant="ghost" className="h-10 px-6 font-bold text-[10px] uppercase tracking-widest text-white hover:text-[#00E676] hover:bg-transparent">
+              <Button 
+                variant="ghost" 
+                className={cn(
+                  "h-10 px-6 font-bold text-[10px] uppercase tracking-widest transition-all duration-300",
+                  scrolled 
+                    ? "bg-primary text-white hover:bg-primary/90 rounded-lg" 
+                    : "text-white hover:text-white/80 hover:bg-transparent"
+                )}
+              >
                 Dashboard Login
               </Button>
             </Link>
@@ -164,7 +172,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 function NavLink({ href, children }: any) {
   return (
-    <Link href={href} className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-[#00E676] transition-colors">
+    <Link href={href} className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-primary transition-colors">
       {children}
     </Link>
   );
@@ -173,12 +181,12 @@ function NavLink({ href, children }: any) {
 function NavDropdown({ label, links }: { label: string; links: { label: string; href: string }[] }) {
   return (
     <div className="relative group py-4">
-      <button className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-[#00E676] transition-colors flex items-center gap-1">
+      <button className="font-bold text-[12px] uppercase tracking-widest text-white hover:text-primary transition-colors flex items-center gap-1">
         {label} <ChevronDown className="w-3.5 h-3.5 opacity-50" />
       </button>
       <div className="absolute top-full left-0 w-48 bg-black border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[100]">
         {links.map((link) => (
-          <Link key={link.label} href={link.href} className="block px-4 py-2 text-sm font-bold text-white/70 hover:text-[#00E676] hover:bg-white/5 transition-colors">
+          <Link key={link.label} href={link.href} className="block px-4 py-2 text-sm font-bold text-white/70 hover:text-primary hover:bg-white/5 transition-colors">
             {link.label}
           </Link>
         ))}
@@ -189,7 +197,7 @@ function NavDropdown({ label, links }: { label: string; links: { label: string; 
 
 function MobileNavLink({ href, children }: any) {
   return (
-    <Link href={href} className="text-5xl font-black hover:text-[#00E676] transition-colors tracking-tighter">
+    <Link href={href} className="text-5xl font-black hover:text-primary transition-colors tracking-tighter">
       {children}
     </Link>
   );

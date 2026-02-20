@@ -20,7 +20,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-8xl font-black font-heading leading-[0.85] tracking-tighter text-white uppercase drop-shadow-2xl"
           >
-            Say Hello to <br />
+            Hello to <br />
             Simple, Complaint <br />
             Business Payments
           </motion.h1>

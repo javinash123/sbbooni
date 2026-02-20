@@ -29,7 +29,7 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 
 function Router() {
   return (
-    <Switch>
+    <Switch base="/simplebit">
       <Route path="/" component={Home} />
       <Route path="/who-we-serve" component={WhoWeServe} />
       <Route path="/pricing" component={Pricing} />

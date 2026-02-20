@@ -223,15 +223,15 @@ function AcceptContent() {
       <section className="py-24 bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mb-24">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Whether you're already accepting online payments or not, SimpleBit's got you covered in both cases!</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Simple payments for businesses at every stage</h2>
             <div className="w-12 h-1.5 bg-primary rounded-full" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-8">
-              <h3 className="text-4xl font-black tracking-tighter">Need help with accepting online payments?</h3>
-              <p className="text-lg text-gray-500 font-medium">We can make your life easier with payment powered by SimpleBit. Start accepting all major payment methods and ensure the highest rate of successful transaction. Only available in UAE, KSA, Egypt and Jordan.</p>
-              <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">Download the app</Button>
+              <h3 className="text-4xl font-black tracking-tighter">Need help setting up Simplebit?</h3>
+              <p className="text-lg text-gray-500 font-medium">SimpleBit helps businesses accept payments securely with local settlement and regional support.</p>
+              <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">request for demo</Button>
             </div>
             <div className="relative flex justify-center">
                <div className="relative w-80 h-80 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center p-8">
@@ -273,9 +273,9 @@ function AcceptContent() {
              </div>
           </div>
           <div className="order-1 lg:order-2 space-y-8">
-            <h3 className="text-4xl font-black tracking-tighter">Already accepting payments online?</h3>
-            <p className="text-lg text-gray-400">Connect your existing payment provider to SimpleBit. Empower your business to sell more and add friendlier ways for your customers to check out.</p>
-            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Get in touch</Button>
+            <h3 className="text-4xl font-black tracking-tighter">Already working with a payment provider?</h3>
+            <p className="text-lg text-gray-400">Connect your existing payment provider to SimpleBit for unified payment management and reporting.</p>
+            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Talk to Sales</Button>
           </div>
         </div>
       </section>
@@ -289,14 +289,14 @@ function SellContent() {
       <section className="py-24 bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mb-24">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Win new customers and retain them for life. Grow your brand, increase average baskets, and drive more sales.</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Simplify payment requests for your customers</h2>
             <div className="w-12 h-1.5 bg-primary rounded-full" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-8">
-              <h3 className="text-4xl font-black tracking-tighter">Collections</h3>
-              <p className="text-lg text-gray-500 font-medium">A powerful marketing tool that allows you to create curated collections of items and send them on WhatsApp.</p>
+              <h3 className="text-4xl font-black tracking-tighter">Payment Collections</h3>
+              <p className="text-lg text-gray-500 font-medium">Create structured payment requests or itemized invoices that can be shared digitally with customers.</p>
               <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">Learn more</Button>
             </div>
             <div className="relative flex justify-center">
@@ -311,9 +311,9 @@ function SellContent() {
                      </div>
                      <div className="flex-grow space-y-3">
                         <div className="w-full h-32 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-100 flex items-center justify-center">
-                           <ShoppingBag className="w-8 h-8 text-gray-200" />
+                           <FileText className="w-8 h-8 text-gray-200" />
                         </div>
-                        <div className="w-full h-8 bg-[#00E676]/10 rounded-lg flex items-center justify-center font-bold text-[10px] text-[#00E676]">Summer Collection</div>
+                        <div className="w-full h-8 bg-[#00E676]/10 rounded-lg flex items-center justify-center font-bold text-[10px] text-[#00E676]">Payment Request</div>
                         <div className="space-y-2">
                            {[1,2,3].map(i => (
                               <div key={i} className="flex justify-between items-center bg-gray-50 p-2 rounded-xl">
@@ -357,9 +357,9 @@ function SellContent() {
              </div>
           </div>
           <div className="order-1 lg:order-2 space-y-8">
-            <h3 className="text-4xl font-black tracking-tighter">cShop</h3>
-            <p className="text-lg text-gray-500 font-medium">Optimize your social presence with cShop, your own social landing page that mimics a window shopping experience. With cShop, you can personalize your storefront, organize your products, and connect with your customers more easily.</p>
-            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Get started</Button>
+            <h3 className="text-4xl font-black tracking-tighter">Payment Page</h3>
+            <p className="text-lg text-gray-500 font-medium">Create hosted payment pages to present payment requests or invoices in a clear, branded format.</p>
+            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Learn More</Button>
           </div>
         </div>
       </section>
@@ -367,15 +367,15 @@ function SellContent() {
       <section className="py-24 bg-white">
         <div className="container-wide grid lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-8">
-            <h3 className="text-4xl font-black tracking-tighter">cShop Market</h3>
-            <p className="text-lg text-gray-500 font-medium">Get discovered on cShop Market, the first chat-to-shop marketplace, and connect with an audience of hundreds of thousands of customers eager to shop.</p>
+            <h3 className="text-4xl font-black tracking-tighter">Merchant directory</h3>
+            <p className="text-lg text-gray-500 font-medium">An optional directory allowing approved merchants to share their hosted payment pages.</p>
             <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">Learn more</Button>
           </div>
           <div className="relative flex justify-center">
              <div className="bg-gray-100 rounded-[3rem] p-12 w-full max-w-lg">
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden aspect-square flex flex-col">
                    <div className="p-4 bg-gray-50 border-b flex items-center justify-between">
-                      <span className="font-black text-sm">Marketplace</span>
+                      <span className="font-black text-sm">Merchant Directory</span>
                       <Globe className="w-4 h-4 text-gray-400" />
                    </div>
                    <div className="flex-grow p-6 flex items-center justify-center">
@@ -384,8 +384,8 @@ function SellContent() {
                             <Users className="w-10 h-10 text-primary" />
                          </div>
                          <div className="space-y-1">
-                            <p className="font-black text-2xl">Reach Millions</p>
-                            <p className="text-gray-400 font-medium">Your shop, global reach.</p>
+                            <p className="font-black text-2xl">Verified Merchants</p>
+                            <p className="text-gray-400 font-medium">Branded payment pages, all in one place.</p>
                          </div>
                       </div>
                    </div>
@@ -399,20 +399,20 @@ function SellContent() {
         <div className="container-wide grid lg:grid-cols-2 gap-24 items-center">
           <div className="order-2 lg:order-1 relative">
              <div className="w-80 h-96 bg-gray-900 rounded-[3rem] p-2 mx-auto relative group overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover rounded-[2.5rem] opacity-50" />
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover rounded-[2.5rem] opacity-50" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                    <div className="bg-[#00E676] text-black font-black p-4 rounded-2xl flex items-center justify-between">
-                      <span>Chat to shop</span>
-                      <MessageCircle className="w-5 h-5 fill-black" />
+                      <span>Payment details</span>
+                      <CreditCard className="w-5 h-5 fill-black" />
                    </div>
                 </div>
              </div>
           </div>
           <div className="order-1 lg:order-2 space-y-8">
-            <h3 className="text-4xl font-black tracking-tighter">Chat to shop</h3>
-            <p className="text-lg text-gray-400">Easily create and categorize your catalog, ready to share anytime. Give your customers the ability to reach out in real time, a 'Chat to Shop' experience - increasing engagement and sales.</p>
-            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Get started</Button>
+            <h3 className="text-4xl font-black tracking-tighter">Share payment details with customers</h3>
+            <p className="text-lg text-gray-400">Create payment details or invoices that can be shared digitally with customers.</p>
+            <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black uppercase">Learn more</Button>
           </div>
         </div>
       </section>

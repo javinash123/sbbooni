@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Zap, ShoppingBag, CreditCard, Globe, Users, Heart, ArrowRight } from "lucide-react";
+import { Zap, ShoppingBag, CreditCard, Globe, Users, Heart, ArrowRight, FileText, BarChart3, ShieldCheck } from "lucide-react";
 
 export default function WhoWeServe() {
   return (
@@ -14,7 +14,7 @@ export default function WhoWeServe() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase"
           >
-            Thousands of businesses sell more with SimpleBit.
+            Businesses use SimpleBit across multiple industries
           </motion.h1>
 
           <div className="grid md:grid-cols-2 gap-12 mt-20 max-w-4xl mx-auto">
@@ -23,8 +23,7 @@ export default function WhoWeServe() {
                    <div className="absolute inset-0 border-[12px] border-white/5 rounded-full" />
                    <div className="absolute inset-0 border-[12px] border-primary border-t-transparent border-r-transparent rounded-full rotate-45" />
                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="font-black text-sm">By</span>
-                      <span className="font-black text-sm uppercase">Industry</span>
+                      <span className="font-black text-sm uppercase">By Industry</span>
                    </div>
                 </div>
                 <ul className="text-left space-y-2 text-sm font-bold text-white/60">
@@ -38,8 +37,7 @@ export default function WhoWeServe() {
                    <div className="absolute inset-0 border-[12px] border-white/5 rounded-full" />
                    <div className="absolute inset-0 border-[12px] border-primary border-b-transparent rounded-full -rotate-12" />
                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="font-black text-sm">Type</span>
-                      <span className="font-black text-sm uppercase">Business</span>
+                      <span className="font-black text-sm uppercase">Business Type</span>
                    </div>
                 </div>
                 <ul className="text-left space-y-2 text-sm font-bold text-white/60">
@@ -55,26 +53,28 @@ export default function WhoWeServe() {
       <section className="bg-white py-24">
         <div className="container-wide grid md:grid-cols-2 gap-8">
           <Card 
-            title="Starter"
+            title="Standard"
             subtitle="Get a head start."
-            desc="If you're just getting started, or still in the early phase, you have plenty to worry about. Establishing an online presence, choosing the right products to sell, and sorting out accept payments. It's hard. It's technical. It's overwhelming. It doesn't have to be."
+            desc="For businesses getting started with payment links, invoices, and basic reporting."
             quote="Our mission is to remove the headaches so you can focus on what you do best."
             features={[
-              { label: "Start selling online.", icon: ShoppingBag },
-              { label: "Access resources to power your business.", icon: Zap },
-              { label: "Accept payments.", icon: CreditCard }
+              { label: "Accept payments", icon: CreditCard },
+              { label: "Issue invoices and payment links", icon: FileText },
+              { label: "Settlement and reconciliation", icon: ShieldCheck },
+              { label: "Reporting and exports", icon: BarChart3 }
             ]}
             img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
           />
           <Card 
-            title="Power"
+            title="Premium"
             subtitle="Take your business to the next level."
-            desc="Already selling with eCommerce, or have a retail presence? Complement your existing operation with a new channel to drive more sales and make the most of what you have going."
+            desc="For businesses needing higher volumes, advanced reporting, and operational controls."
             quote="Meet your customers on their favorite messaging and social apps, generate new business and convert more sales with eCommerce."
             features={[
-              { label: "Accept payments in new ways.", icon: CreditCard },
-              { label: "Empower your salespeople.", icon: Users },
-              { label: "Retain your customers for life.", icon: Heart }
+              { label: "Accept payments", icon: CreditCard },
+              { label: "Issue invoices and payment links", icon: FileText },
+              { label: "Settlement and reconciliation", icon: ShieldCheck },
+              { label: "Reporting and exports", icon: BarChart3 }
             ]}
             img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
             variant="dark"
@@ -171,7 +171,7 @@ function Card({ title, subtitle, desc, quote, features, img, variant = "light" }
 
       <div className="pt-8 border-t border-gray-100">
          <p className="text-[10px] font-black uppercase tracking-widest text-center mb-8">Get started in minutes</p>
-         <div className="grid grid-cols-3 gap-4">
+         <div className="grid grid-cols-4 gap-4">
             {features.map((f: any, i: number) => (
               <div key={i} className="text-center space-y-4">
                  <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto">
@@ -184,7 +184,7 @@ function Card({ title, subtitle, desc, quote, features, img, variant = "light" }
       </div>
 
       <div className="flex gap-4">
-         <Button className="flex-1 bg-black text-white rounded-2xl h-14 font-black">Download</Button>
+         <Button className="flex-1 bg-black text-white rounded-2xl h-14 font-black">Request a demo</Button>
          <Button className="flex-1 bg-primary text-white rounded-2xl h-14 font-black">Learn More</Button>
       </div>
     </div>

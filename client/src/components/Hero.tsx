@@ -20,8 +20,9 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-8xl font-black font-heading leading-[0.85] tracking-tighter text-white uppercase drop-shadow-2xl"
           >
-            Say hello <br />
-            to Commerce.
+            Say Hello to <br />
+            Simple, Complaint <br />
+            Business Payments
           </motion.h1>
           
           <motion.div
@@ -31,11 +32,11 @@ export function Hero() {
             className="space-y-6"
           >
             <p className="text-xl md:text-2xl text-white drop-shadow-lg leading-tight max-w-xl font-medium mx-auto md:mx-0">
-              The next generation platform for personalised commerce. <br/>Sell more with a human connection.
+              Accept digital payments, issue invoices, and settle in AED securely and efficiently
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
               <Button className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold">
-                Download App
+                Talk to Sales
               </Button>
               <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
                 Request Demo
@@ -49,10 +50,10 @@ export function Hero() {
       <div className="container-wide relative mt-16">
          <div className="lg:absolute lg:right-10 lg:-top-24 w-full lg:w-[400px] bg-white/10 backdrop-blur-2xl border border-white/20 p-6 rounded-[2.5rem] shadow-2xl flex gap-5">
             <div className="flex-grow">
-               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">cShop</p>
-               <h3 className="text-xl font-black text-white mb-3">Discover, chat, <br/>and shop.</h3>
+               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">SimpleBit</p>
+               <h3 className="text-xl font-black text-white mb-3">Discover, Learn <br/>and Request Demo</h3>
                <Button className="bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold px-5 h-8 rounded-full border border-white/20">
-                  Download Report
+                  Request Demo
                </Button>
             </div>
             <div className="w-28 h-36 bg-gray-800 rounded-xl overflow-hidden relative shadow-2xl">

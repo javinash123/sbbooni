@@ -50,10 +50,10 @@ export default function CapturePage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 uppercase">
-                Your business in <br/>your hands.
+                Your payments, <br/>fully under your <br/>control.
               </h1>
               <p className="text-xl text-gray-400 max-w-md mb-10 font-medium">
-                Everything you need to compete, succeed and thrive at your fingertips.
+                Manage payment collection, settlement, and reporting from Simplebits merchant dashboard.
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                  <div className="bg-white/10 backdrop-blur p-4 rounded-2xl border border-white/10 flex items-center gap-4">
@@ -61,7 +61,7 @@ export default function CapturePage() {
                        <TrendingUp className="text-primary w-6 h-6" />
                     </div>
                     <div>
-                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Pending orders</p>
+                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Pending Payments</p>
                        <p className="text-2xl font-black">32</p>
                     </div>
                  </div>
@@ -70,8 +70,8 @@ export default function CapturePage() {
                        <Check className="text-[#00E676] w-6 h-6" />
                     </div>
                     <div>
-                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Total collected</p>
-                       <p className="text-2xl font-black">21 <span className="text-sm text-gray-500 font-bold">Orders</span></p>
+                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Total Settled in AED</p>
+                       <p className="text-2xl font-black">21 <span className="text-sm text-gray-500 font-bold">Payments</span></p>
                     </div>
                  </div>
               </div>
@@ -119,7 +119,7 @@ export default function CapturePage() {
         <div className="container-wide">
           <div className="relative overflow-hidden rounded-[3rem] bg-black p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 group">
              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent pointer-events-none" />
-             <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase relative z-10">Tap into <br/><span className="italic font-light">eCommerce</span></h2>
+             <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase relative z-10">Ready to simplify <br/>your business payments</h2>
              <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-16 text-lg font-black uppercase relative z-10">Request Demo</Button>
           </div>
         </div>
@@ -134,15 +134,15 @@ function CaptureContent() {
       <section className="py-24 bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mb-24">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Capture sales on the same channels you interact with your customers on. Use tools specifically made for modern business.</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6"> Use SimpleBit to generate payment requests and invoices wherever you engage with customers</h2>
             <div className="w-12 h-1.5 bg-primary rounded-full" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-24 items-center">
              <div className="space-y-8">
-                <h3 className="text-4xl font-black tracking-tighter">Create orders instantly</h3>
-                <p className="text-lg text-gray-500 font-medium">Build a basket in just a few taps. Select a customer and add items from your catalog in 10 seconds or less.</p>
-                <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">Start creating orders</Button>
+                <h3 className="text-4xl font-black tracking-tighter">Create payment requests instantly</h3>
+                <p className="text-lg text-gray-500 font-medium">Generate invoices or payment links in a few steps by selecting a customer and amount.</p>
+                <Button className="bg-black text-white hover:bg-black/90 rounded-xl px-8 h-12 font-black">Request Demo</Button>
              </div>
              <div className="relative">
                 <div className="bg-gray-50 rounded-[3rem] p-12 flex items-center justify-center">
@@ -188,8 +188,8 @@ function CaptureContent() {
             </div>
             <div className="order-1 lg:order-2 space-y-8">
                <h3 className="text-4xl font-black tracking-tighter">One-off invoices</h3>
-               <p className="text-lg text-gray-400">Create one-off invoices from items not listed in your catalog, great for services or fully customized orders.</p>
-               <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black">Get started</Button>
+               <p className="text-lg text-gray-400">Create one-off invoices for services or custom amounts not listed in your standard pricing.</p>
+               <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-xl px-8 h-12 font-black">Request Demo</Button>
             </div>
          </div>
       </section>

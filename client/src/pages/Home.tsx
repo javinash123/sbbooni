@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
-import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, Zap, Globe, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, Zap, Globe, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook, ShieldCheck, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -27,16 +27,13 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-1 space-y-6"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest">
-                <Zap className="w-3 h-3" /> Step 1: Capture
-              </div>
-              <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter">Business <br/>just got <br/>personal.</h2>
+              <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter">Transactions <br/>just got <br/>Simplier.</h2>
               <p className="text-xl text-gray-500 leading-tight font-medium max-w-md">
-                Sell like never before. Introduce checkout to the channels that matter the most to your customers.
+                Create payment links or invoices to accept digital payments from customers and settle in AED
               </p>
               <div className="pt-2">
                 <Button className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold">
-                  Get started
+                  Request to Demo
                 </Button>
               </div>
             </motion.div>
@@ -131,14 +128,11 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="space-y-8"
             >
-               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-widest">
-                <CreditCard className="w-3 h-3" /> Step 2: Accept
-               </div>
-               <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase">Turn chat <br/>into <br/>cash flow.</h2>
-               <p className="text-xl text-gray-400 leading-tight max-w-md">Easily create invoices and close sales directly within the messaging apps your customers already use and love.</p>
+               <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase">Send AED <br/>Across <br/>Various Payment channels</h2>
+               <p className="text-xl text-gray-400 leading-tight max-w-md">Send payment links or invoices to customers and accept digital payments securely.</p>
                <div className="pt-4 flex flex-col gap-8">
                   <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
-                    View demo
+                    request demo
                   </Button>
                   <div className="flex items-center gap-6">
                      <motion.div 
@@ -186,14 +180,11 @@ export default function Home() {
                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                className="space-y-10"
              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest">
-                  <ShoppingBag className="w-3 h-3" /> Step 3: Sell
-                </div>
-                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">Scale your <br/>reach.</h2>
-                <p className="text-2xl text-gray-500 font-medium leading-tight">Enable global payments seamlessly and start selling across borders today.</p>
+                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">Settle payments <br/>in AED</h2>
+                <p className="text-2xl text-gray-500 font-medium leading-tight">Manage transactions, reporting, and settlement from a single platform with clear AED payouts.</p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold">
-                    Tell me more
+                    Learn More
                   </Button>
                 </div>
                 <div className="grid grid-cols-2 gap-8 pt-10 border-t border-gray-100">
@@ -214,8 +205,8 @@ export default function Home() {
                      transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
                      className="space-y-1"
                    >
-                      <p className="text-5xl font-black tracking-tighter text-primary">300+</p>
-                      <p className="text-gray-400 font-bold uppercase text-[10px] tracking-widest leading-none">Global partners</p>
+                      <p className="text-5xl font-black tracking-tighter text-primary">100+</p>
+                      <p className="text-gray-400 font-bold uppercase text-[10px] tracking-widest leading-none">partners in the UAE</p>
                    </motion.div>
                 </div>
              </motion.div>
@@ -233,7 +224,7 @@ export default function Home() {
                       <div>
                          <p className="text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-widest">Works with all payment methods</p>
                          <div className="flex flex-wrap gap-4 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
-                            {['VISA', 'MASTERCARD', 'AMEX', 'APPLE PAY', 'GOOGLE PAY'].map(p => (
+                            {['APPLE PAY', 'SAMSUNG PAY', 'VISA', 'MASTERCARD', 'AMEX'].map(p => (
                               <div key={p} className="h-10 px-4 bg-white shadow-sm border border-gray-100 rounded-xl flex items-center font-bold text-xs">{p}</div>
                             ))}
                          </div>
@@ -304,18 +295,15 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="order-1 lg:order-2 space-y-10"
             >
-               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-widest">
-                  <BarChart3 className="w-3 h-3" /> Step 4: Track
-               </div>
-               <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">Master <br/>your data.</h2>
+               <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">Track your <br/>payments</h2>
                <div className="space-y-8">
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-white/90">Gain total control and visibility of your business operations.</h3>
+                    <h3 className="text-2xl font-bold text-white/90">Monitor transactions, settlements, and reports in real time from “Simplebits Built in Merchant Dashboard”</h3>
                     <ul className="space-y-4">
                       {[
-                        'Real-time data on orders, vendors and customers.',
-                        'Smart insights to optimize your sales funnel.',
-                        'Complete financial reporting and reconciliation.'
+                        'Real time visibility into transactions and settlement status',
+                        'Clear reporting for finance and operations teams',
+                        'Export ready data for reconciliation and audits'
                       ].map((text, i) => (
                         <motion.li 
                           key={i} 
@@ -334,7 +322,7 @@ export default function Home() {
                     </ul>
                   </div>
                   <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
-                    Explore Analytics
+                    Learn More
                   </Button>
                </div>
             </motion.div>
@@ -354,44 +342,33 @@ export default function Home() {
         
         <div className="container-wide relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
-            >
-              The Next Evolution
-            </motion.div>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-8">
               Why <span className="text-primary">SimpleBit?</span>
             </h2>
             <p className="text-xl text-gray-400 font-medium leading-tight">
-              Traditional commerce is broken. We're building the infrastructure for how people actually want to shop today.
+              SimpleBit is aiming to make transactions simple, while offering low fees and meeting enterprise and regulatory requirements.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {[
               { 
-                percent: 87, 
-                title: "Social Shopping",
-                text: "of shoppers believe social channels help them make a shopping decision.", 
+                title: "Compliance first design",
+                text: "Built for regulated markets and financial institutions", 
                 color: "text-primary",
-                icon: Instagram
+                icon: ShieldCheck
               },
               { 
-                percent: 70, 
-                title: "Hyper-Personalization",
-                text: "of shoppers say they would only engage with personalized marketing messages.", 
+                title: "Operational Efficiency",
+                text: "Simplified payment collection, settlement, and reporting", 
                 color: "text-[#3B82F6]",
                 icon: Zap
               },
               { 
-                percent: 53, 
-                title: "Conversational Trust",
-                text: "of shoppers say they would rather buy from companies they can reach by chat.", 
+                title: "Enterprise Readiness",
+                text: "Reliable infrastructure for growing businesses", 
                 color: "text-[#EAB308]",
-                icon: MessageCircle
+                icon: Building2
               }
             ].map((stat, i) => (
               <motion.div 
@@ -403,26 +380,11 @@ export default function Home() {
                 className="bg-white/5 rounded-[2.5rem] p-10 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all duration-500"
               >
                 <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="relative w-24 h-24 flex items-center justify-center">
-                    <svg className="w-full h-full -rotate-90">
-                      <circle cx="48" cy="48" r="44" fill="none" stroke="currentColor" strokeWidth="4" className="text-white/5" />
-                      <motion.circle 
-                        cx="48" cy="48" r="44" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" 
-                        initial={{ strokeDashoffset: 276.46 }}
-                        whileInView={{ strokeDashoffset: 276.46 * (1 - stat.percent/100) }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 2, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
-                        strokeDasharray="276.46"
-                        className={stat.color} 
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <stat.icon className={cn("w-6 h-6 mb-1 opacity-50 group-hover:opacity-100 transition-opacity", stat.color)} />
-                      <span className="text-2xl font-black tracking-tighter">{stat.percent}%</span>
-                    </div>
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center">
+                    <stat.icon className={cn("w-8 h-8", stat.color)} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3">{stat.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3">{stat.title}</h3>
                     <p className="text-white/60 font-medium leading-relaxed">{stat.text}</p>
                   </div>
                 </div>
@@ -503,10 +465,7 @@ export default function Home() {
         <div className="container-wide">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="space-y-6">
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">See all <br/>success stories.</h2>
-              <p className="text-xl text-gray-500 font-medium max-w-sm">
-                Discover how businesses like yours are thriving with SimpleBit.
-              </p>
+              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">Discover more <br/>about Simplebit</h2>
             </div>
             <Button variant="outline" className="rounded-full px-10 h-14 border-black font-black uppercase text-xs">View all stories</Button>
           </div>
@@ -572,7 +531,7 @@ export default function Home() {
               className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" 
             />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight">Ready to grow <br/>your business?</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight">Ready to try Simplebit</h2>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative z-10">
               <Button className="bg-[#00E676] text-black hover:bg-[#00E676]/90 rounded-2xl px-12 h-14 text-lg font-black uppercase shadow-[0_0_50px_rgba(0,230,118,0.3)]">Request Demo</Button>

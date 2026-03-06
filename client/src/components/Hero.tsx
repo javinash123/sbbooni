@@ -20,9 +20,8 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-8xl font-black font-heading leading-[0.85] tracking-tighter text-white uppercase drop-shadow-2xl"
           >
-            Hello to <br />
-            Simple, Complaint <br />
-            Business Payments
+            TRANSACTIONS <br />
+            MADE SIMPLE
           </motion.h1>
           
           <motion.div
@@ -32,35 +31,23 @@ export function Hero() {
             className="space-y-6"
           >
             <p className="text-xl md:text-2xl text-white drop-shadow-lg leading-tight max-w-xl font-medium mx-auto md:mx-0">
-              Accept digital payments, issue invoices, and settle in AED securely and efficiently
+              Facilitating secure, real-real-time payments for modern businesses across the UAE.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
-              <Button className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold">
+              <Button className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
                 Talk to Sales
               </Button>
-              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold">
+              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
                 Request Demo
               </Button>
             </div>
+            <p className="text-sm text-white/70 font-medium pt-4">
+              New businesses pay Zero transaction fees on their first 5,000 AED*
+            </p>
           </motion.div>
         </div>
       </div>
 
-      {/* Floating UI Element */}
-      <div className="container-wide relative mt-16">
-         <div className="lg:absolute lg:right-10 lg:-top-24 w-full lg:w-[400px] bg-white/10 backdrop-blur-2xl border border-white/20 p-6 rounded-[2.5rem] shadow-2xl flex gap-5">
-            <div className="flex-grow">
-               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">SimpleBit</p>
-               <h3 className="text-xl font-black text-white mb-3">Discover, Learn <br/>and Request Demo</h3>
-               <Button className="bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold px-5 h-8 rounded-full border border-white/20">
-                  Request Demo
-               </Button>
-            </div>
-            <div className="w-28 h-36 bg-gray-800 rounded-xl overflow-hidden relative shadow-2xl">
-               <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" />
-            </div>
-         </div>
-      </div>
     </section>
   );
 }

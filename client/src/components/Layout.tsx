@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container-wide flex items-center justify-between">
           <Link href="/" className="text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
-            <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-[#00E676] transition-colors duration-300">
+            <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-primary transition-colors duration-300">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
               </svg>

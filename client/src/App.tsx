@@ -29,21 +29,36 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 
 function Router() {
   return (
-    <Switch base="/simplebit">
+    <Switch>
+      <Route path="/simplebit" component={Home} />
       <Route path="/" component={Home} />
+      <Route path="/simplebit/who-we-serve" component={WhoWeServe} />
       <Route path="/who-we-serve" component={WhoWeServe} />
+      <Route path="/simplebit/pricing" component={Pricing} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/simplebit/features/capture" component={Capture} />
       <Route path="/features/capture" component={Capture} />
+      <Route path="/simplebit/features/accept" component={Capture} />
       <Route path="/features/accept" component={Capture} />
+      <Route path="/simplebit/features/sell" component={Capture} />
       <Route path="/features/sell" component={Capture} />
+      <Route path="/simplebit/features/track" component={Capture} />
       <Route path="/features/track" component={Capture} />
+      <Route path="/simplebit/about" component={AboutUs} />
       <Route path="/about" component={AboutUs} />
+      <Route path="/simplebit/privacy" component={PrivacyPolicy} />
       <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/simplebit/terms" component={Terms} />
       <Route path="/terms" component={Terms} />
+      <Route path="/simplebit/knowledge-base" component={KnowledgeBase} />
       <Route path="/knowledge-base" component={KnowledgeBase} />
+      <Route path="/simplebit/blogs" component={Blogs} />
       <Route path="/blogs" component={Blogs} />
+      <Route path="/simplebit/partnerships" component={Partnerships} />
       <Route path="/partnerships" component={Partnerships} />
+      <Route path="/simplebit/case-studies" component={CaseStudies} />
       <Route path="/case-studies" component={CaseStudies} />
+      <Route path="/simplebit/features" component={() => <PlaceholderPage title="Features" />} />
       <Route path="/features" component={() => <PlaceholderPage title="Features" />} />
       <Route component={NotFound} />
     </Switch>

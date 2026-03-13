@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import { Hero } from "@/components/Hero";
 import { Button } from "@/components/ui/button";
-import { Check, ShoppingBag, CreditCard, BarChart3, MessageCircle, Zap, Globe, TrendingUp, Play, Instagram, Twitter, Linkedin, Facebook, ShieldCheck, Building2 } from "lucide-react";
+import { Check } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 import dashboardAnalytics from "@/assets/dashboard_analytics.png";
 import invoicesImage from "@/assets/invoices-image.png";
 
@@ -31,12 +31,14 @@ export default function Home() {
             >
               <h2 className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tighter">Transactions <br/>just got <br/>Simpler.</h2>
               <p className="text-xl text-gray-500 leading-tight font-medium max-w-md">
-                Accept cards, send payment links, generate QR codes and facilitate settlement in AED*
+                Create invoices, send payment links, generate QR codes and track your transaction activity.
               </p>
               <div className="pt-2">
-                <Button className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
-                  Get Started
-                </Button>
+                <Link href="/contact">
+                  <Button data-testid="button-get-started-capture" className="bg-black text-white hover:bg-black/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </motion.div>
             <motion.div 
@@ -66,7 +68,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Feature 2: Accept -> "How It Works" */}
+      {/* Feature 2: How It Works */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -147,16 +149,18 @@ export default function Home() {
                  <p className="text-2xl font-black text-primary pt-4">Yes, it's that simple!</p>
                </div>
                <div className="pt-4 flex flex-col gap-8">
-                  <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
-                    Get Started
-                  </Button>
+                  <Link href="/contact">
+                    <Button data-testid="button-get-started-how" className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
+                      Get Started
+                    </Button>
+                  </Link>
                </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Feature 3: Track -> Updated Features */}
+      {/* Feature 3: How Simplebit Helps Your Business */}
       <motion.section 
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -201,11 +205,10 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-white/90">From SimpleBit's merchant dashboard.</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        'Track Payments',
+                        'Track Transactions',
                         'Download Invoices',
                         'Observe Customers Behavior',
-                        'No Hidden Fees',
-                        'Payouts Within 3 Business Days*'
+                        'No Hidden Fees'
                       ].map((text, i) => (
                         <motion.div 
                           key={i} 
@@ -222,74 +225,25 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="pt-6">
-                    <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Accept Digital Payments From</p>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Compatible With Major Payment Networks</p>
                     <div className="flex flex-wrap gap-4 grayscale opacity-50">
                       {['AMEX', 'VISA', 'MASTERCARD', 'SAMSUNG PAY', 'APPLE PAY'].map(p => (
                         <div key={p} className="h-8 px-3 bg-white/10 rounded-lg flex items-center font-bold text-[10px] text-white border border-white/5">{p}</div>
                       ))}
                     </div>
                   </div>
-                  <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
-                    Get Started
-                  </Button>
+                  <Link href="/contact">
+                    <Button data-testid="button-get-started-helps" className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
+                      Get Started
+                    </Button>
+                  </Link>
                </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-
-      {/* Success Stories Section */}
-      <section className="section-padding bg-gray-50 overflow-hidden">
-        <div className="container-wide">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="space-y-6">
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">Discover more <br/>about Simplebit</h2>
-            </div>
-            <Button variant="outline" className="rounded-full px-10 h-14 border-black font-black uppercase text-xs">View all stories</Button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Personalizing the checkout experience for a global brand.",
-                category: "eCommerce",
-                img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=600"
-              },
-              {
-                title: "How chat commerce saved local retail during the shift.",
-                category: "Retail",
-                img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600"
-              },
-              {
-                title: "Scaling service business with automated invoicing.",
-                category: "Services",
-                img: "https://images.unsplash.com/photo-1521737706076-370c4084ae04?auto=format&fit=crop&q=80&w=600"
-              }
-            ].map((story, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="group cursor-pointer"
-              >
-                <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden mb-6 relative">
-                  <img src={story.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={story.title} />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{story.category}</p>
-                  <h3 className="text-2xl font-black tracking-tight leading-tight group-hover:text-primary transition-colors">{story.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Banner - Compact Height */}
+      {/* CTA Banner */}
       <motion.section 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -314,7 +268,9 @@ export default function Home() {
               <p className="text-lg text-white/70 font-medium">Simply create your account now</p>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative z-10">
-              <Button className="bg-primary text-white hover:bg-primary/90 rounded-2xl px-12 h-14 text-lg font-black uppercase shadow-[0_0_50px_rgba(var(--primary),0.3)] active:bg-purple-600">Get Started</Button>
+              <Link href="/contact">
+                <Button data-testid="button-get-started-cta" className="bg-primary text-white hover:bg-primary/90 rounded-2xl px-12 h-14 text-lg font-black uppercase shadow-[0_0_50px_rgba(var(--primary),0.3)] active:bg-purple-600">Get Started</Button>
+              </Link>
             </motion.div>
           </div>
         </div>

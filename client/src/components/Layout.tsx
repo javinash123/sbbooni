@@ -10,6 +10,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
 
+  const isHomePage = location === "/" || location === "";
+  const needsDarkHeader = !isHomePage;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -24,12 +27,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled ? "glass-header py-2" : "bg-transparent py-8"
+          scrolled
+            ? "glass-header py-2"
+            : needsDarkHeader
+              ? "bg-white shadow-sm py-4"
+              : "bg-transparent py-8"
         )}
       >
         <div className="container-wide flex items-center justify-between">
-          <Link href="/" className="text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group text-white">
-            <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black group-hover:bg-primary transition-colors duration-300">
+          <Link href="/" className={cn(
+            "text-2xl font-black font-heading tracking-tighter flex items-center gap-2 group",
+            needsDarkHeader && !scrolled ? "text-black" : "text-white"
+          )}>
+            <div className={cn(
+              "w-9 h-9 rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors duration-300",
+              needsDarkHeader && !scrolled ? "bg-black text-white" : "bg-white text-black"
+            )}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
               </svg>
@@ -37,8 +50,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             SimpleBit
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:block">
+          {/* Desktop Nav - Hidden for now */}
+          {/* <div className="hidden lg:block">
             <nav className="flex items-center gap-8">
               <NavDropdown 
                 label="Features" 
@@ -61,7 +74,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 ]} 
               />
             </nav>
-          </div>
+          </div> */}
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-5">
@@ -72,7 +85,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   "h-10 px-6 font-bold text-xs uppercase tracking-widest transition-all duration-300",
                   scrolled 
                     ? "bg-primary text-white hover:bg-primary/90 rounded-lg" 
-                    : "text-white hover:text-white/80 hover:bg-transparent"
+                    : needsDarkHeader
+                      ? "text-black hover:text-black/80 hover:bg-transparent"
+                      : "text-white hover:text-white/80 hover:bg-transparent"
                 )}
               >
                 Dashboard Login
@@ -84,13 +99,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white hover:bg-transparent">
+                <Button variant="ghost" size="icon" className={cn(
+                  "hover:bg-transparent",
+                  needsDarkHeader && !scrolled ? "text-black" : "text-white"
+                )}>
                   <Menu className="w-8 h-8" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:w-[400px] border-none bg-black text-white p-0">
                 <div className="flex flex-col gap-8 mt-24 px-10">
-                  <MobileNavLink href="/features">Features</MobileNavLink>
+                  {/* Menu items hidden for now */}
+                  {/* <MobileNavLink href="/features">Features</MobileNavLink>
                   <MobileNavLink href="/who-we-serve">Who We Serve</MobileNavLink>
                   <MobileNavLink href="/pricing">Pricing</MobileNavLink>
                   <div className="flex flex-col gap-4">
@@ -99,13 +118,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <MobileNavLink href="/blogs">Blogs</MobileNavLink>
                     <MobileNavLink href="/case-studies">Case Studies</MobileNavLink>
                     <MobileNavLink href="/partnerships">Partnerships</MobileNavLink>
-                  </div>
+                  </div> */}
                   <div className="h-px bg-white/10 my-4" />
                   <a href="https://app.simple-bit.com" className="text-4xl font-black text-white hover:text-primary transition-colors">
                     Login
                   </a>
-                  <Link href="/demo">
-                    <GradientButton className="w-full py-8 text-xl rounded-2xl">Request Demo</GradientButton>
+                  <Link href="/contact">
+                    <GradientButton className="w-full py-8 text-xl rounded-2xl">Contact Us</GradientButton>
                   </Link>
                 </div>
               </SheetContent>
@@ -144,31 +163,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             
             <FooterColumn title="Features" links={[
-               { label: 'Capture', href: '/features/capture' },
-               { label: 'Accept', href: '/features/accept' },
-               { label: 'Sell', href: '/features/sell' },
-               { label: 'Track', href: '/features/track' }
+               { label: 'Capture', href: '/coming-soon' },
+               { label: 'Accept', href: '/coming-soon' },
+               { label: 'Sell', href: '/coming-soon' },
+               { label: 'Track', href: '/coming-soon' }
             ]} />
 
             <FooterColumn title="Company" links={[
-              { label: 'Who We Serve', href: '/who-we-serve' },
-              { label: 'About us', href: '/about' },
-              { label: 'Pricing', href: '/pricing' }
+              { label: 'Who We Serve', href: '/coming-soon' },
+              { label: 'About us', href: '/coming-soon' },
+              { label: 'Pricing', href: '/coming-soon' }
             ]} />
 
             <FooterColumn title="Hub" links={[
-              { label: 'Knowledge Base', href: '/knowledge-base' },
-              { label: 'Blogs', href: '/blogs' },
-              { label: 'Partnerships', href: '/partnerships' },
-              { label: 'Case Studies', href: '/case-studies' }
+              { label: 'Knowledge Base', href: '/coming-soon' },
+              { label: 'Blogs', href: '/coming-soon' },
+              { label: 'Partnerships', href: '/coming-soon' },
+              { label: 'Case Studies', href: '/coming-soon' }
             ]} />
           </div>
 
-          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-            <p>&copy; {new Date().getFullYear()} SimpleBit. All rights reserved. | <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link> | <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></p>
-            <div className="flex gap-8 items-center grayscale opacity-50">
-               <span className="text-white font-black text-sm tracking-tighter">SIMPLEBIT</span>
-            </div>
+          <div className="border-t border-white/10 pt-12 flex flex-col items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 text-center">
+            <p>&copy; {new Date().getFullYear()} SimpleBit. All rights reserved. | <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link> | <Link href="/terms" className="hover:text-white transition-colors">Terms and Conditions</Link> | <Link href="/payment-policy" className="hover:text-white transition-colors">Payment Policy</Link></p>
+            <p className="normal-case tracking-normal text-[11px] font-medium text-white/40 max-w-2xl">
+              SimpleBit provides software tools for transaction management. Payment processing services are provided by licensed payment service providers.
+            </p>
           </div>
         </div>
       </footer>
@@ -228,7 +247,7 @@ function FooterColumn({ title, links }: { title: string; links: any[] }) {
 
 function SocialIcon({ icon: Icon }: { icon: any }) {
   return (
-    <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#00E676] hover:text-black hover:border-transparent transition-all">
+    <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-transparent transition-all">
       <Icon className="w-5 h-5" />
     </a>
   );

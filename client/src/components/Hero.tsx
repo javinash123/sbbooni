@@ -2,11 +2,11 @@ import { GradientButton } from "@/components/ui/gradient-button";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-dashboard.png";
 import { Button } from "./ui/button";
+import { Link } from "wouter";
 
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-black overflow-hidden">
-      {/* Background Image/Overlay */}
       <div className="absolute inset-0 z-0">
          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" />
          <div className="absolute inset-0 bg-black/60" />
@@ -31,18 +31,22 @@ export function Hero() {
             className="space-y-6"
           >
             <p className="text-xl md:text-2xl text-white drop-shadow-lg leading-tight max-w-xl font-medium mx-auto md:mx-0">
-              Facilitating secure, real-real-time payments for modern businesses across the UAE.
+              A simple platform for creating invoices, generating payment links, and tracking transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
-              <Button className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
-                Talk to Sales
-              </Button>
-              <Button className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
-                Request Demo
-              </Button>
+              <Link href="/contact">
+                <Button data-testid="button-talk-to-sales" className="bg-white text-black hover:bg-white/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
+                  Talk to Sales
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button data-testid="button-request-demo" className="bg-primary text-white hover:bg-primary/90 px-10 h-12 text-sm font-bold active:bg-purple-600">
+                  Request Demo
+                </Button>
+              </Link>
             </div>
             <p className="text-sm text-white/70 font-medium pt-4">
-              New businesses pay Zero transaction fees on their first 5,000 AED*
+              Simple pricing with transparent platform fees.
             </p>
           </motion.div>
         </div>

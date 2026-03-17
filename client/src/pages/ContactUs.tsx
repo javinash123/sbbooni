@@ -181,7 +181,7 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Location</h3>
-                    <p className="text-gray-500 font-medium">United Arab Emirates</p>
+                    <p className="text-gray-500 font-medium">Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E.</p>
                   </div>
                 </div>
               </div>

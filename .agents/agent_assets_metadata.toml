@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "eaBsxD3BgbIicxv6oazXE"
+uri = "file://simplebit-build.tar.gz"
+type = "unspecified"
+title = "SimpleBit Website Build - PDF Fix (ready for GoDaddy upload)"
